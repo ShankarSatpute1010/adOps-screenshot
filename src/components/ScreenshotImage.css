@@ -35,26 +35,16 @@
 }
 
 .image-text-site{
-    position: absolute;
-    top: 269px;
-    left: 120px;
-    width: 80px;
     color: #bcbcbc;
 }
 
 .image-text-chrome{
-    position: absolute;
-    top: 269px;
-    left: 55px;
     color: #bcbcbc;
     font-size: 11px;
 }
 
 .chrome-logo{
-    position: absolute;
-    top: 269px;
-    left: 25px;
-    width: 17px;
+    width: 16px;
     border-radius: 50%;
 }
 
@@ -81,8 +71,20 @@
 }
 
 .image-text-time{
-    position: absolute;
-    top: 269px;
-    left: 220px;
     color: #bcbcbc;
+}
+
+.heading-text-notif{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    top: 265px;
+    left: 25px;
+    color: #bcbcbc;
+}
+
+.leftSize{
+    margin-left: 5px;
 }

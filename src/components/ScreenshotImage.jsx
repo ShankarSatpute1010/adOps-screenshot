@@ -217,40 +217,54 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
           <span className="date-format-time">
             {formattedDate ? formattedDate : ""}
           </span>
-          <img
-            className="chrome-logo"
-            src="https://demo.adgebra.in/custom/images/Chrome-Logo-png.png"
-            alt="Logo"
-          />
-          <span className="image-text-chrome">Chrome</span>
-          <span
-            style={{
-              position: "absolute",
-              left: "105px",
-              top: "259px",
-              fontSize: "18px",
-              color: "#bcbcbc",
-            }}
-          >
-            .
-          </span>
-          <span className="image-text-site" style={{ fontSize: siteFontSize }}>
-            {siteText}
-          </span>
-          <span
-            style={{
-              position: "absolute",
-              left: "210px",
-              top: "259px",
-              fontSize: "18px",
-              color: "#bcbcbc",
-            }}
-          >
-            .
-          </span>
-          <span className="image-text-time" style={{ fontSize: siteFontSize }}>
-            {siteTime}
-          </span>
+          <div className="heading-text-notif">
+            <img
+              className="chrome-logo"
+              src="https://demo.adgebra.in/custom/images/Chrome-Logo-png.png"
+              alt="Logo"
+            />
+            <span 
+            className="image-text-chrome leftSize" style={{fontSize: siteFontSize}}
+            >Chrome</span>
+            <span className="leftSize"
+              style={{
+                // position: "absolute",
+                // left: "105px",
+                // top: "259px",
+                position: "relative",
+                top: "-4px",
+                fontSize: "18px",
+                color: "#bcbcbc",
+              }}
+            >
+              .
+            </span>
+            <span
+              className="image-text-site leftSize"
+              style={{ fontSize: siteFontSize }}
+            >
+              {siteText}
+            </span>
+            <span className="leftSize"
+              style={{
+                // position: "absolute",
+                // left: "210px",
+                // top: "259px",
+                position: "relative",
+                top: "-4px",
+                fontSize: "18px",
+                color: "#bcbcbc",
+              }}
+            >
+              .
+            </span>
+            <span
+              className="image-text-time leftSize"
+              style={{ fontSize: siteFontSize }}
+            >
+              {siteTime}
+            </span>
+          </div>
           {logoCrop ? (
             <img className="logo-crop" src={logoCrop} alt="Logo" />
           ) : (

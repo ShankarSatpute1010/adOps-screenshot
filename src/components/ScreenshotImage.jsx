@@ -232,7 +232,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
                 // left: "105px",
                 // top: "259px",
                 position: "relative",
-                top: "-4px",
+                top: "-5px",
                 fontSize: "18px",
                 color: "#bcbcbc",
               }}
@@ -251,7 +251,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
                 // left: "210px",
                 // top: "259px",
                 position: "relative",
-                top: "-4px",
+                top: "-5px",
                 fontSize: "18px",
                 color: "#bcbcbc",
               }}

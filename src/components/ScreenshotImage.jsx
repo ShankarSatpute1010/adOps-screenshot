@@ -27,7 +27,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
   const [siteFontSize, setSiteFontSize] = useState("14px");
   const [siteTime, setSiteTime] = useState("");
 
-  const [imageTop, setImageTop] = useState({ value: 355, label: 355 });
+  const [imageTop, setImageTop] = useState("");
   const [imageTopOption, setImageTopOption] = useState({});
 
   const [startDate, setStartDate] = useState(new Date());
@@ -272,7 +272,11 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             <img
               className="brand-image"
               src={croppedImageUrl}
-              style={{ width: "300px", height: "auto", top: imageTop.value + "px" }}
+              style={{
+                width: "300px",
+                height: "auto",
+                top: (imageTop?.value ? imageTop?.value : 355) + "px",
+              }}
               alt="CropImage"
             />
           </div>

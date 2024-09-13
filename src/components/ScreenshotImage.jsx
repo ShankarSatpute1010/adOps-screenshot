@@ -13,6 +13,7 @@ import { LogoCrop } from "./LogoCrop";
 export const ScreenshotImage = ({ croppedImageUrl }) => {
   const [brandText, setBrandText] = useState("");
   const [imageText, setImageText] = useState("");
+  const [ssName, setSSName] = useState("");
   const [optionImageText, setOptionImageText] = useState(null);
   const [brandTextFont, setOptionBrandTextFont] = useState(null);
   const [siteText, setSiteText] = useState("");
@@ -43,7 +44,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
     htmlToImage
       .toBlob(node, { quality: 1, pixelRatio: 2 })
       .then((blob) => {
-        saveAs(blob, "ss-image.jpg");
+        saveAs(blob, `${ssName ? ssName : "ssImage"}.jpg`);
       })
       .catch((error) => {
         console.error("Error generating image:", error);
@@ -101,6 +102,20 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
     <>
       <div className="d-flex flex-column">
         <form>
+          <div className="form-group d-flex">
+            <input
+              type="text"
+              className="form-control"
+              value={ssName}
+              id="formSSName"
+              placeholder="Enter SS Name"
+              autoComplete="off"
+              onChange={(e) => {
+                setSSName(e.target.value);
+              }}
+              maxLength={20}
+            />
+          </div>
           <div className="form-group d-flex">
             <textarea
               type="text"
@@ -223,10 +238,14 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
               src="https://demo.adgebra.in/custom/images/Chrome-Logo-png.png"
               alt="Logo"
             />
-            <span 
-            className="image-text-chrome leftSize" style={{fontSize: siteFontSize}}
-            >Chrome</span>
-            <span className="leftSize"
+            <span
+              className="image-text-chrome leftSize"
+              style={{ fontSize: siteFontSize }}
+            >
+              Chrome
+            </span>
+            <span
+              className="leftSize"
               style={{
                 // position: "absolute",
                 // left: "105px",
@@ -245,7 +264,8 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             >
               {siteText}
             </span>
-            <span className="leftSize"
+            <span
+              className="leftSize"
               style={{
                 // position: "absolute",
                 // left: "210px",

@@ -6,6 +6,11 @@ import { saveAs } from "file-saver";
 import Select from "react-select";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Option1Content from "./ssOptions/Option1Content";
+import Option2Content from "./ssOptions/Option2Content";
+import Option3Content from "./ssOptions/Option3Content";
+import Option4Content from "./ssOptions/Option4Content";
+import Option5Content from "./ssOptions/Option5Content";
 
 import { format } from "date-fns";
 import { LogoCrop } from "./LogoCrop";
@@ -35,6 +40,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
 
   const [show, setShow] = useState(false);
   const [logoCrop, setLogoCrop] = useState();
+
+  const [ssOption, setSSOption] = useState([]);
+
+  const [selectSSOption, setSelectSSOption] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -93,9 +102,109 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
   }, []);
 
   const handleImageTop = (e) => {
-    console.log(e);
-
     setImageTop(e);
+  };
+
+  useEffect(() => {
+    let options = [];
+    let limit = 5;
+    let values;
+    for (let index = 1; index <= limit; index++) {
+      values = { value: `Option ${index}`, label: `Option ${index}` };
+      options.push(values);
+    }
+    setSSOption(options);
+  }, []);
+
+  const handleScreenshotOption = (event) => {
+    setSelectSSOption(event);
+  };
+
+  const renderOptionContent = () => {
+    switch (selectSSOption?.value) {
+      case "Option 1":
+        return (
+          <Option1Content
+            formattedDate={formattedDate}
+            siteFontSize={siteFontSize}
+            logoCrop={logoCrop}
+            fontBrandText={fontBrandText}
+            fontImageText={fontImageText}
+            brandText={brandText}
+            croppedImageUrl={croppedImageUrl}
+            imageTop={imageTop}
+            siteText={siteText}
+            siteTime={siteTime}
+            imageText={imageText}
+          />
+        );
+      case "Option 2":
+        return (
+          <Option2Content
+            formattedDate={formattedDate}
+            siteFontSize={siteFontSize}
+            logoCrop={logoCrop}
+            fontBrandText={fontBrandText}
+            fontImageText={fontImageText}
+            brandText={brandText}
+            croppedImageUrl={croppedImageUrl}
+            imageTop={imageTop}
+            siteText={siteText}
+            siteTime={siteTime}
+            imageText={imageText}
+          />
+        );
+      case "Option 3":
+        return (
+          <Option3Content
+            formattedDate={formattedDate}
+            siteFontSize={siteFontSize}
+            logoCrop={logoCrop}
+            fontBrandText={fontBrandText}
+            fontImageText={fontImageText}
+            brandText={brandText}
+            croppedImageUrl={croppedImageUrl}
+            imageTop={imageTop}
+            siteText={siteText}
+            siteTime={siteTime}
+            imageText={imageText}
+          />
+        );
+      case "Option 4":
+        return (
+          <Option4Content
+            formattedDate={formattedDate}
+            siteFontSize={siteFontSize}
+            logoCrop={logoCrop}
+            fontBrandText={fontBrandText}
+            fontImageText={fontImageText}
+            brandText={brandText}
+            croppedImageUrl={croppedImageUrl}
+            imageTop={imageTop}
+            siteText={siteText}
+            siteTime={siteTime}
+            imageText={imageText}
+          />
+        );
+      case "Option 5":
+        return (
+          <Option5Content
+            formattedDate={formattedDate}
+            siteFontSize={siteFontSize}
+            logoCrop={logoCrop}
+            fontBrandText={fontBrandText}
+            fontImageText={fontImageText}
+            brandText={brandText}
+            croppedImageUrl={croppedImageUrl}
+            imageTop={imageTop}
+            siteText={siteText}
+            siteTime={siteTime}
+            imageText={imageText}
+          />
+        );
+      default:
+        return <p>Select an option to see the content</p>;
+    }
   };
 
   return (
@@ -210,12 +319,12 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
               options={imageTopOption}
             />
           </div>
-          <div className="form-group d-flex" style={{ width: "100px" }}>
+          <div className="form-group" style={{ width: "100px" }}>
             <input
               type="text"
               className="form-control"
               value={siteTime}
-              id="formSiteText"
+              id="formTime"
               placeholder="Enter Time"
               autoComplete="off"
               onChange={(e) => {
@@ -223,97 +332,18 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
               }}
             />
           </div>
+          <div className="form-group w-100">
+            <Select
+              className="dropdown-size w-100"
+              placeholder="Screenshot Options"
+              value={selectSSOption}
+              onChange={handleScreenshotOption}
+              options={ssOption}
+            />
+          </div>
         </form>
         <div className="screen-image" id="download-div">
-          <img
-            src="https://demo.adgebra.in/custom/images/Blank_screenshot.jpg"
-            alt="Blank Screenshot"
-          />
-          <span className="date-format-time">
-            {formattedDate ? formattedDate : ""}
-          </span>
-          <div className="heading-text-notif">
-            <img
-              className="chrome-logo"
-              src="https://demo.adgebra.in/custom/images/Chrome-Logo-png.png"
-              alt="Logo"
-            />
-            <span
-              className="image-text-chrome leftSize"
-              style={{ fontSize: siteFontSize }}
-            >
-              Chrome
-            </span>
-            <span
-              className="leftSize"
-              style={{
-                // position: "absolute",
-                // left: "105px",
-                // top: "259px",
-                position: "relative",
-                top: "-5px",
-                fontSize: "18px",
-                color: "#bcbcbc",
-              }}
-            >
-              .
-            </span>
-            <span
-              className="image-text-site leftSize"
-              style={{ fontSize: siteFontSize }}
-            >
-              {siteText}
-            </span>
-            <span
-              className="leftSize"
-              style={{
-                // position: "absolute",
-                // left: "210px",
-                // top: "259px",
-                position: "relative",
-                top: "-5px",
-                fontSize: "18px",
-                color: "#bcbcbc",
-              }}
-            >
-              .
-            </span>
-            <span
-              className="image-text-time leftSize"
-              style={{ fontSize: siteFontSize }}
-            >
-              {siteTime}
-            </span>
-          </div>
-          {logoCrop ? (
-            <img className="logo-crop" src={logoCrop} alt="Logo" />
-          ) : (
-            ""
-          )}
-          <span
-            className="image-text-brand"
-            style={{ fontSize: fontBrandText }}
-          >
-            {brandText}
-          </span>
-          <span
-            className="image-text-heading"
-            style={{ fontSize: fontImageText }}
-          >
-            {imageText}
-          </span>
-          <div style={{ position: "absolute", width: "100%", height: "100%" }}>
-            <img
-              className="brand-image"
-              src={croppedImageUrl}
-              style={{
-                width: "300px",
-                height: "auto",
-                top: (imageTop?.value ? imageTop?.value : 355) + "px",
-              }}
-              alt="CropImage"
-            />
-          </div>
+          {renderOptionContent()}
         </div>
         {croppedImageUrl && (
           <Button

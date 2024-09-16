@@ -43,7 +43,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
 
   const [ssOption, setSSOption] = useState([]);
 
-  const [selectSSOption, setSelectSSOption] = useState("");
+  const [selectSSOption, setSelectSSOption] = useState({
+    value: "Option 1",
+    label: "Option 1",
+  });
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -209,8 +212,8 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
 
   return (
     <>
-      <div className="d-flex flex-column">
-        <form>
+      <div className="row col-md-12 px-0">
+        <form className="col-md-7 col-sm-12 pl-0">
           <div className="form-group d-flex">
             <input
               type="text"
@@ -319,7 +322,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
               options={imageTopOption}
             />
           </div>
-          <div className="form-group" style={{ width: "100px" }}>
+          <div className="form-group" style={{ width: "110px" }}>
             <input
               type="text"
               className="form-control"
@@ -342,18 +345,20 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             />
           </div>
         </form>
-        <div className="screen-image" id="download-div">
-          {renderOptionContent()}
+        <div>
+          <div className="screen-image" id="download-div">
+            {renderOptionContent()}
+          </div>
+          {croppedImageUrl && (
+            <Button
+              className="submit-button mb-5"
+              variant="contained"
+              onClick={handleOnDownload}
+            >
+              Donwload
+            </Button>
+          )}
         </div>
-        {croppedImageUrl && (
-          <Button
-            className="submit-button mb-5"
-            variant="contained"
-            onClick={handleOnDownload}
-          >
-            Donwload
-          </Button>
-        )}
       </div>
     </>
   );

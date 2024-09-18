@@ -75,7 +75,7 @@ const Option2Content = ({
           className="brand-image"
           src={croppedImageUrl}
           style={{
-            width: "240px",
+            width: "250px",
             height: "auto",
             marginLeft: "40px",
             top: (imageTop?.value ? imageTop?.value : 355) + "px",

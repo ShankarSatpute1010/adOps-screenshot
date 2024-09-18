@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../ScreenshotImage.css";
 
 const Option1Content = ({
@@ -13,9 +13,23 @@ const Option1Content = ({
   siteText,
   siteTime,
   imageText,
+  format,
+  startDate,
+  setImageTopSize,
+  imageTopSize,
 }) => {
+  useEffect(() => {
+    formattedDate = format(startDate, "HH:mm EEEE, MMM d");
+  }, []);
+
+  useEffect(() => {
+    if (croppedImageUrl) {
+      setImageTopSize(355);
+    }
+  }, [imageTopSize]);
+
   return (
-    <div>
+    <div className="option-one">
       <img
         style={{ width: "100%" }}
         src="https://demo.adgebra.in/custom/images/Blank_screenshot.jpg"

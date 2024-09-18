@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./ScreenshotImage.css";
 import Button from "@mui/material/Button";
 import * as htmlToImage from "html-to-image";
 import { saveAs } from "file-saver";
@@ -48,6 +47,8 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
     label: "Option 1",
   });
 
+  const [imageTopSize, setImageTopSize] = useState(355);
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -94,15 +95,14 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
   const formattedDate = format(startDate, "HH:mm EEE, MMM d");
 
   useEffect(() => {
-    let topImageSize = 355;
     let values;
     let topImageSizeArr = [];
-    for (let index = 340; index < topImageSize; index++) {
+    for (let index = imageTopSize - 15; index < imageTopSize; index++) {
       values = { value: index, label: index };
       topImageSizeArr.push(values);
     }
     setImageTopOption(topImageSizeArr);
-  }, []);
+  }, [imageTopSize]);
 
   const handleImageTop = (e) => {
     setImageTop(e);
@@ -139,6 +139,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             siteText={siteText}
             siteTime={siteTime}
             imageText={imageText}
+            format={format}
+            startDate={startDate}
+            setImageTopSize={setImageTopSize}
+            imageTopSize={imageTopSize}
           />
         );
       case "Option 2":
@@ -155,6 +159,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             siteText={siteText}
             siteTime={siteTime}
             imageText={imageText}
+            format={format}
+            startDate={startDate}
+            setImageTopSize={setImageTopSize}
+            imageTopSize={imageTopSize}
           />
         );
       case "Option 3":
@@ -171,6 +179,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             siteText={siteText}
             siteTime={siteTime}
             imageText={imageText}
+            format={format}
+            startDate={startDate}
+            setImageTopSize={setImageTopSize}
+            imageTopSize={imageTopSize}
           />
         );
       case "Option 4":
@@ -187,6 +199,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             siteText={siteText}
             siteTime={siteTime}
             imageText={imageText}
+            format={format}
+            startDate={startDate}
+            setImageTopSize={setImageTopSize}
+            imageTopSize={imageTopSize}
           />
         );
       case "Option 5":
@@ -203,6 +219,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             siteText={siteText}
             siteTime={siteTime}
             imageText={imageText}
+            format={format}
+            startDate={startDate}
+            setImageTopSize={setImageTopSize}
+            imageTopSize={imageTopSize}
           />
         );
       default:

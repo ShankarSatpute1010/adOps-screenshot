@@ -1,9 +1,9 @@
-.option-one .image-text {
+.image-text {
     width: 300px;
     height: auto;
 }
 
-.option-one .screen-image {
+.screen-image {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -15,40 +15,40 @@
     color: white;
 }
 
-.option-one .dropdown-size {
+.dropdown-size {
     width: 130px;
 }
 
-.option-one .brand-image {
+.brand-image {
     position: relative;
-    border-radius: 15px;
+    border-radius: 0px;
     left: 25px;
 }
 
-.option-one .image-text-heading {
+.image-text-heading {
     position: absolute;
-    top: 312px;
-    left: 26px;
+    top: 220px;
+    left: 65px;
     width: 266px;
     line-height: 1.3;
     color: #b3afaf;
 }
 
-.option-one .image-text-site {
+.image-text-site {
     color: #bcbcbc;
 }
 
-.option-one .image-text-chrome {
+.image-text-chrome {
     color: #bcbcbc;
     font-size: 11px;
 }
 
-.option-one .chrome-logo {
+.chrome-logo {
     width: 16px;
     border-radius: 50%;
 }
 
-.option-one .logo-crop {
+.logo-crop {
     position: absolute;
     right: 26px;
     top: 304px;
@@ -56,35 +56,35 @@
     border-radius: 3px;
 }
 
-.option-one .image-text-brand {
+.image-text-brand {
     position: absolute;
-    top: 290px;
-    left: 27px;
+    top: 200px;
+    left: 65px;
     width: 250px;
 }
 
-.option-one .date-format-time {
+.date-format-time {
     position: absolute;
-    top: 46px;
-    left: 20px;
+    top: 10px;
+    left: 15px;
     width: 250px;
 }
 
-.option-one .image-text-time {
+.image-text-time {
     color: #bcbcbc;
 }
 
-.option-one .heading-text-notif {
+.heading-text-notif {
     position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: auto;
-    top: 265px;
-    left: 25px;
+    top: 177px;
+    left: 58px;
     color: #bcbcbc;
 }
 
-.option-one .leftSize {
+.leftSize {
     margin-left: 5px;
 }

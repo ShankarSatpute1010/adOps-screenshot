@@ -17,16 +17,17 @@ const Option1Content = ({
   startDate,
   setImageTopSize,
   imageTopSize,
+  selectSSOption
 }) => {
   useEffect(() => {
     formattedDate = format(startDate, "HH:mm EEEE, MMM d");
   }, []);
 
   useEffect(() => {
-    if (croppedImageUrl) {
+    if (selectSSOption.value == 'Option 1') {
       setImageTopSize(355);
     }
-  }, [imageTopSize]);
+  }, [imageTopSize, selectSSOption]);
 
   return (
     <div className="option-one">

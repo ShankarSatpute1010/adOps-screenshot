@@ -143,6 +143,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             startDate={startDate}
             setImageTopSize={setImageTopSize}
             imageTopSize={imageTopSize}
+            selectSSOption={selectSSOption}
           />
         );
       case "Option 2":
@@ -163,6 +164,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             startDate={startDate}
             setImageTopSize={setImageTopSize}
             imageTopSize={imageTopSize}
+            selectSSOption={selectSSOption}
           />
         );
       case "Option 3":
@@ -183,6 +185,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             startDate={startDate}
             setImageTopSize={setImageTopSize}
             imageTopSize={imageTopSize}
+            selectSSOption={selectSSOption}
           />
         );
       case "Option 4":
@@ -203,6 +206,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             startDate={startDate}
             setImageTopSize={setImageTopSize}
             imageTopSize={imageTopSize}
+            selectSSOption={selectSSOption}
           />
         );
       case "Option 5":
@@ -223,6 +227,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             startDate={startDate}
             setImageTopSize={setImageTopSize}
             imageTopSize={imageTopSize}
+            selectSSOption={selectSSOption}
           />
         );
       default:

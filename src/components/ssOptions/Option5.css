@@ -1,0 +1,96 @@
+.option-five {
+    color: black;
+}
+
+.option-five .image-text {
+    width: 300px;
+    height: auto;
+}
+
+.option-five .screen-image {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 775px;
+    background: #333333;
+    border-radius: 0px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.option-five .dropdown-size {
+    width: 130px;
+}
+
+.option-five .brand-image {
+    position: relative;
+    border-radius: 0px;
+    left: 34px;
+}
+
+.option-five .image-text-heading {
+    position: absolute;
+    top: 357px;
+    left: 34px;
+    width: 280px;
+    line-height: 1.2;
+    color: #5d5d5d;
+}
+
+.option-five .image-text-site {
+    color: #8f8e8e;
+}
+
+.option-five .image-text-chrome {
+    color: #bcbcbc;
+    font-size: 11px;
+}
+
+.option-five .chrome-logo {
+    width: 16px;
+    border-radius: 50%;
+}
+
+.option-five .logo-crop {
+    position: absolute;
+    right: 26px;
+    top: 304px;
+    width: 25px;
+    border-radius: 3px;
+}
+
+.option-five .image-text-brand {
+    position: absolute;
+    top: 337px;
+    left: 33px;
+    width: 250px;
+}
+
+.option-five .date-format-time {
+    position: absolute;
+    top: 45px;
+    left: 15px;
+    width: 250px;
+    font-size: 14px;
+}
+
+.image-text-time {
+    color: #bcbcbc;
+}
+
+.option-five .heading-text-notif {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    top: 313px;
+    left: 50px;
+    color: black;
+}
+
+.option-five .leftSize {
+    margin-left: 5px;
+    color: #8f8e8e;
+}

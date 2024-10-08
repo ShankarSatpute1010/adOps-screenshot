@@ -51,7 +51,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
 
   const [batteryOption, setBatteryOption] = useState({
     value: "1",
-    label: "Battery 1",
+    label: "Battery 20%",
     url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_1.png",
   });
 
@@ -132,27 +132,27 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
   const allBatteryOptions = [
     {
       value: "1",
-      label: "Battery 1",
+      label: "Battery 20%",
       url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_1.png",
     },
     {
       value: "2",
-      label: "Battery 2",
+      label: "Battery 40%",
       url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_2.png",
     },
     {
       value: "3",
-      label: "Battery 3",
+      label: "Battery 60%",
       url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_3.png",
     },
     {
       value: "4",
-      label: "Battery 4",
+      label: "Battery 80%",
       url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_4.png",
     },
     {
       value: "5",
-      label: "Battery 5",
+      label: "Battery 100%",
       url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_5.png",
     },
   ];

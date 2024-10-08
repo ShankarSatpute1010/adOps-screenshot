@@ -49,6 +49,8 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
 
   const [imageTopSize, setImageTopSize] = useState(355);
 
+  const [batteryOption, setBatteryOption] = useState();
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -123,6 +125,38 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
     setSelectSSOption(event);
   };
 
+  const allBatteryOptions = [
+    {
+      value: "1",
+      label: "1",
+      url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_1.png",
+    },
+    {
+      value: "2",
+      label: "2",
+      url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_2.png",
+    },
+    {
+      value: "3",
+      label: "3",
+      url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_3.png",
+    },
+    {
+      value: "4",
+      label: "4",
+      url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_4.png",
+    },
+    {
+      value: "5",
+      label: "5",
+      url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_5.png",
+    },
+  ];
+
+  const handleBatteryOption = (e) => {
+    setBatteryOption(e);
+  };
+
   const renderOptionContent = () => {
     switch (selectSSOption?.value) {
       case "Option 1":
@@ -144,6 +178,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             setImageTopSize={setImageTopSize}
             imageTopSize={imageTopSize}
             selectSSOption={selectSSOption}
+            batteryOption={batteryOption}
           />
         );
       case "Option 2":
@@ -165,6 +200,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             setImageTopSize={setImageTopSize}
             imageTopSize={imageTopSize}
             selectSSOption={selectSSOption}
+            batteryOption={batteryOption}
           />
         );
       case "Option 3":
@@ -186,6 +222,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             setImageTopSize={setImageTopSize}
             imageTopSize={imageTopSize}
             selectSSOption={selectSSOption}
+            batteryOption={batteryOption}
           />
         );
       case "Option 4":
@@ -207,6 +244,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             setImageTopSize={setImageTopSize}
             imageTopSize={imageTopSize}
             selectSSOption={selectSSOption}
+            batteryOption={batteryOption}
           />
         );
       case "Option 5":
@@ -228,6 +266,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             setImageTopSize={setImageTopSize}
             imageTopSize={imageTopSize}
             selectSSOption={selectSSOption}
+            batteryOption={batteryOption}
           />
         );
       default:
@@ -345,6 +384,14 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
               value={imageTop}
               onChange={handleImageTop}
               options={imageTopOption}
+            />
+          </div>
+          <div className="form-group">
+            <Select
+              placeholder="Battery Options"
+              value={batteryOption}
+              onChange={handleBatteryOption}
+              options={allBatteryOptions}
             />
           </div>
           <div className="form-group" style={{ width: "110px" }}>

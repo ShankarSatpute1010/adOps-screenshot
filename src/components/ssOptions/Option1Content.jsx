@@ -17,14 +17,15 @@ const Option1Content = ({
   startDate,
   setImageTopSize,
   imageTopSize,
-  selectSSOption
+  selectSSOption,
+  batteryOption,
 }) => {
   useEffect(() => {
     formattedDate = format(startDate, "HH:mm EEEE, MMM d");
   }, []);
 
   useEffect(() => {
-    if (selectSSOption.value == 'Option 1') {
+    if (selectSSOption.value == "Option 1") {
       setImageTopSize(355);
     }
   }, [imageTopSize, selectSSOption]);
@@ -35,6 +36,12 @@ const Option1Content = ({
         style={{ width: "100%" }}
         src="https://demo.adgebra.in/custom/images/Blank_screenshot.jpg"
         alt="Blank Screenshot"
+      />
+
+      <img
+        style={{ position: "absolute", top: "10px", right: '24px', width: '13px' }}
+        src={batteryOption?.url}
+        alt="battery"
       />
       <span className="date-format-time">
         {formattedDate ? formattedDate : ""}

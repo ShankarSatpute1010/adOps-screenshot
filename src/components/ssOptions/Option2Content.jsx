@@ -17,12 +17,13 @@ const Option2Content = ({
   startDate,
   setImageTopSize,
   imageTopSize,
-  selectSSOption
+  selectSSOption,
+  batteryOption
 }) => {
   formattedDate = format(startDate, "HH:MM EEE, d MMM ");
 
   useEffect(() => {
-    if (selectSSOption.value == 'Option 2') {
+    if (selectSSOption.value == "Option 2") {
       setImageTopSize(260);
     }
   }, [imageTopSize, selectSSOption]);
@@ -33,6 +34,16 @@ const Option2Content = ({
         style={{ width: "100%" }}
         src="https://demo.adgebra.in/custom/images/IRCTC.jpg"
         alt="Blank Screenshot"
+      />
+      <img
+        style={{
+          position: "absolute",
+          top: "11px",
+          right: "12px",
+          width: "13px",
+        }}
+        src={batteryOption?.url}
+        alt="battery"
       />
       <span className="date-format-time">
         {formattedDate ? formattedDate : ""}

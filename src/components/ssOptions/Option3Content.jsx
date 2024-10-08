@@ -17,7 +17,8 @@ const Option3Content = ({
   startDate,
   setImageTopSize,
   imageTopSize,
-  selectSSOption
+  selectSSOption,
+  batteryOption
 }) => {
   formattedDate = format(startDate, "HH:MM EEE, d MMM ");
 
@@ -33,6 +34,17 @@ const Option3Content = ({
         style={{ width: "100%" }}
         src="https://demo.adgebra.in/custom/images/White_1.jpg"
         alt="Blank Screenshot"
+      />
+      <img
+        style={{
+          position: "absolute",
+          top: "13px",
+          right: "33px",
+          width: "13px",
+          mixBlendMode: 'exclusion'
+        }}
+        src={batteryOption?.url}
+        alt="battery"
       />
       <span className="date-format-time">
         {formattedDate ? formattedDate : ""}

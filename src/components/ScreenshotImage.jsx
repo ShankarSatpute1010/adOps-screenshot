@@ -49,7 +49,11 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
 
   const [imageTopSize, setImageTopSize] = useState(355);
 
-  const [batteryOption, setBatteryOption] = useState();
+  const [batteryOption, setBatteryOption] = useState({
+    value: "1",
+    label: "1",
+    url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_1.png",
+  });
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);

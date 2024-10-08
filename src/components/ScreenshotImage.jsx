@@ -132,27 +132,27 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
   const allBatteryOptions = [
     {
       value: "1",
-      label: "1",
+      label: "Battery 1",
       url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_1.png",
     },
     {
       value: "2",
-      label: "2",
+      label: "Battery 2",
       url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_2.png",
     },
     {
       value: "3",
-      label: "3",
+      label: "Battery 3",
       url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_3.png",
     },
     {
       value: "4",
-      label: "4",
+      label: "Battery 4",
       url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_4.png",
     },
     {
       value: "5",
-      label: "5",
+      label: "Battery 5",
       url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_5.png",
     },
   ];

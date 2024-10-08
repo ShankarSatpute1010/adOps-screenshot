@@ -51,7 +51,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
 
   const [batteryOption, setBatteryOption] = useState({
     value: "1",
-    label: "1",
+    label: "Battery 1",
     url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_1.png",
   });
 

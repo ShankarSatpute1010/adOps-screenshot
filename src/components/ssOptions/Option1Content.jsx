@@ -20,6 +20,7 @@ const Option1Content = ({
   selectSSOption,
   batteryOption,
 }) => {
+
   useEffect(() => {
     formattedDate = format(startDate, "HH:mm EEEE, MMM d");
   }, []);
@@ -29,6 +30,7 @@ const Option1Content = ({
       setImageTopSize(355);
     }
   }, [imageTopSize, selectSSOption]);
+
 
   return (
     <div className="option-one">

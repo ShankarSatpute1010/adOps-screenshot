@@ -20,7 +20,10 @@ const Option2Content = ({
   selectSSOption,
   batteryOption
 }) => {
-  formattedDate = format(startDate, "HH:MM EEE, d MMM ");
+
+  useEffect(()=>{
+    formattedDate = format(startDate, "HH:MM EEE, d MMM ");
+  },[])
 
   useEffect(() => {
     if (selectSSOption.value == "Option 2") {

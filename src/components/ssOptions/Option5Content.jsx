@@ -18,12 +18,15 @@ const Option5Content = ({
   setImageTopSize,
   imageTopSize,
   selectSSOption,
-  batteryOption
+  batteryOption,
 }) => {
-  formattedDate = format(startDate, "HH:MM EEE, d MMM ");
+  
+  useEffect(() => {
+    formattedDate = format(startDate, "HH:MM EEE, d MMM ");
+  }, []);
 
   useEffect(() => {
-    if (selectSSOption.value == 'Option 5') {
+    if (selectSSOption.value == "Option 5") {
       setImageTopSize(390);
     }
   }, [imageTopSize, selectSSOption]);
@@ -41,7 +44,7 @@ const Option5Content = ({
           top: "11px",
           right: "40px",
           width: "13px",
-          mixBlendMode: 'exclusion'
+          mixBlendMode: "exclusion",
         }}
         src={batteryOption?.url}
         alt="battery"

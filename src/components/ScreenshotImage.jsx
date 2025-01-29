@@ -13,6 +13,11 @@ import Option5Content from "./ssOptions/Option5Content";
 
 import { format } from "date-fns";
 import { LogoCrop } from "./LogoCrop";
+import Option6Content from "./ssOptions/Option6Content";
+import Option7Content from "./ssOptions/Option7Content";
+import Option8Content from "./ssOptions/Option8Content";
+import Option9Content from "./ssOptions/Option9Content";
+import Option10Content from "./ssOptions/Option10Content";
 
 export const ScreenshotImage = ({ croppedImageUrl }) => {
   const [brandText, setBrandText] = useState("");
@@ -86,10 +91,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
   };
 
   useEffect(() => {
-    let fontSizeValues = 30;
+    let fontSizeValues = 25;
     let values;
     let fontSizeArr = [];
-    for (let index = 10; index < fontSizeValues; index++) {
+    for (let index = 8; index < fontSizeValues; index++) {
       values = { value: index, label: index };
       fontSizeArr.push(values);
     }
@@ -103,7 +108,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
   useEffect(() => {
     let values;
     let topImageSizeArr = [];
-    for (let index = imageTopSize - 15; index < imageTopSize; index++) {
+    for (let index = imageTopSize - 20; index < imageTopSize + 10; index++) {
       values = { value: index, label: index };
       topImageSizeArr.push(values);
     }
@@ -116,7 +121,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
 
   useEffect(() => {
     let options = [];
-    let limit = 5;
+    let limit = 10;
     let values;
     for (let index = 1; index <= limit; index++) {
       values = { value: `Option ${index}`, label: `Option ${index}` };
@@ -254,6 +259,116 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
       case "Option 5":
         return (
           <Option5Content
+            formattedDate={formattedDate}
+            siteFontSize={siteFontSize}
+            logoCrop={logoCrop}
+            fontBrandText={fontBrandText}
+            fontImageText={fontImageText}
+            brandText={brandText}
+            croppedImageUrl={croppedImageUrl}
+            imageTop={imageTop}
+            siteText={siteText}
+            siteTime={siteTime}
+            imageText={imageText}
+            format={format}
+            startDate={startDate}
+            setImageTopSize={setImageTopSize}
+            imageTopSize={imageTopSize}
+            selectSSOption={selectSSOption}
+            batteryOption={batteryOption}
+          />
+        );
+      case "Option 6":
+        return (
+          <Option6Content
+            formattedDate={formattedDate}
+            siteFontSize={siteFontSize}
+            logoCrop={logoCrop}
+            fontBrandText={fontBrandText}
+            fontImageText={fontImageText}
+            brandText={brandText}
+            croppedImageUrl={croppedImageUrl}
+            imageTop={imageTop}
+            siteText={siteText}
+            siteTime={siteTime}
+            imageText={imageText}
+            format={format}
+            startDate={startDate}
+            setImageTopSize={setImageTopSize}
+            imageTopSize={imageTopSize}
+            selectSSOption={selectSSOption}
+            batteryOption={batteryOption}
+          />
+        );
+      case "Option 7":
+        return (
+          <Option7Content
+            formattedDate={formattedDate}
+            siteFontSize={siteFontSize}
+            logoCrop={logoCrop}
+            fontBrandText={fontBrandText}
+            fontImageText={fontImageText}
+            brandText={brandText}
+            croppedImageUrl={croppedImageUrl}
+            imageTop={imageTop}
+            siteText={siteText}
+            siteTime={siteTime}
+            imageText={imageText}
+            format={format}
+            startDate={startDate}
+            setImageTopSize={setImageTopSize}
+            imageTopSize={imageTopSize}
+            selectSSOption={selectSSOption}
+            batteryOption={batteryOption}
+          />
+        );
+      case "Option 8":
+        return (
+          <Option8Content
+            formattedDate={formattedDate}
+            siteFontSize={siteFontSize}
+            logoCrop={logoCrop}
+            fontBrandText={fontBrandText}
+            fontImageText={fontImageText}
+            brandText={brandText}
+            croppedImageUrl={croppedImageUrl}
+            imageTop={imageTop}
+            siteText={siteText}
+            siteTime={siteTime}
+            imageText={imageText}
+            format={format}
+            startDate={startDate}
+            setImageTopSize={setImageTopSize}
+            imageTopSize={imageTopSize}
+            selectSSOption={selectSSOption}
+            batteryOption={batteryOption}
+          />
+        );
+      case "Option 9":
+        return (
+          <Option9Content
+            formattedDate={formattedDate}
+            siteFontSize={siteFontSize}
+            logoCrop={logoCrop}
+            fontBrandText={fontBrandText}
+            fontImageText={fontImageText}
+            brandText={brandText}
+            croppedImageUrl={croppedImageUrl}
+            imageTop={imageTop}
+            siteText={siteText}
+            siteTime={siteTime}
+            imageText={imageText}
+            format={format}
+            startDate={startDate}
+            setImageTopSize={setImageTopSize}
+            imageTopSize={imageTopSize}
+            selectSSOption={selectSSOption}
+            batteryOption={batteryOption}
+          />
+        );
+      case "Option 10":
+        return (
+          <Option10Content
             formattedDate={formattedDate}
             siteFontSize={siteFontSize}
             logoCrop={logoCrop}

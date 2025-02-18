@@ -19,6 +19,10 @@ const Option9Content = ({
   imageTopSize,
   selectSSOption,
   batteryOption,
+  top,
+  setTop,
+  brandTop,
+  setBrandTop
 }) => {
   
   useEffect(() => {
@@ -27,7 +31,9 @@ const Option9Content = ({
 
   useEffect(() => {
     if (selectSSOption.value == "Option 9") {
-      setImageTopSize(320);
+      setImageTopSize(365);
+      setTop(280);
+      setBrandTop(363)
     }
   }, [imageTopSize, selectSSOption]);
 
@@ -77,10 +83,10 @@ const Option9Content = ({
         </span>
       </div>
       {logoCrop ? <img className="logo-crop" src={logoCrop} alt="Logo" /> : ""}
-      <span className="image-text-brand" style={{ fontSize: fontBrandText }}>
+      <span className="image-text-brand" style={{ fontSize: fontBrandText, top: brandTop + 'px' }}>
         {brandText}
       </span>
-      <span className="image-text-heading" style={{ fontSize: fontImageText }}>
+      <span className="image-text-heading" style={{ fontSize: fontImageText, top: top + 'px' }}>
         {imageText}
       </span>
       <div

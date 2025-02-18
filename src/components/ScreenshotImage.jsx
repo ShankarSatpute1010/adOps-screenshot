@@ -47,6 +47,16 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
 
   const [ssOption, setSSOption] = useState([]);
 
+  // AdCopyOption - Top
+  const [topAdCopy, setTopAdCopy] = useState(null);
+  const [topAdCopyOption, setTopAdCopyOption] = useState({});
+  const [top, setTop] = useState();
+
+  // brandOption - Top
+  const [topBrand, setTopBrand] = useState(null);
+  const [topBrandOption, setTopBrandOption] = useState({});
+  const [brandTop, setBrandTop] = useState();
+
   const [selectSSOption, setSelectSSOption] = useState({
     value: "Option 1",
     label: "Option 1",
@@ -78,6 +88,16 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
   const handleOnChangeImageText = (event) => {
     setOptionImageText(event);
     setFontImageText(event.value);
+  };
+
+  const handleOnChangeTopAdCopy = (event) => {
+    setTopAdCopy(event);
+    setTop(event.value);
+  };
+
+  const handleOnChangeTopBrand = (event) => {
+    setTopBrand(event);
+    setBrandTop(event.value);
   };
 
   const handleOnChangeBrandText = (event) => {
@@ -114,6 +134,26 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
     }
     setImageTopOption(topImageSizeArr);
   }, [imageTopSize]);
+
+  useEffect(() => {
+    let values;
+    let topSizeArr = [];
+    for (let index = top - 10; index < top + 10; index++) {
+      values = { value: index, label: index };
+      topSizeArr.push(values);
+    }
+    setTopAdCopyOption(topSizeArr);
+  }, [top]);
+
+  useEffect(() => {
+    let values;
+    let topSizeArr = [];
+    for (let index = top - 10; index < top + 10; index++) {
+      values = { value: index, label: index };
+      topSizeArr.push(values);
+    }
+    setTopBrandOption(topSizeArr);
+  }, [brandTop]);
 
   const handleImageTop = (e) => {
     setImageTop(e);
@@ -188,6 +228,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             imageTopSize={imageTopSize}
             selectSSOption={selectSSOption}
             batteryOption={batteryOption}
+            top={top}
+            setTop={setTop}
+            brandTop={brandTop} 
+            setBrandTop={setBrandTop}
           />
         );
       case "Option 2":
@@ -210,6 +254,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             imageTopSize={imageTopSize}
             selectSSOption={selectSSOption}
             batteryOption={batteryOption}
+            top={top}
+            setTop={setTop}
+            brandTop={brandTop} 
+            setBrandTop={setBrandTop}
           />
         );
       case "Option 3":
@@ -232,6 +280,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             imageTopSize={imageTopSize}
             selectSSOption={selectSSOption}
             batteryOption={batteryOption}
+            top={top}
+            setTop={setTop}
+            brandTop={brandTop} 
+            setBrandTop={setBrandTop}
           />
         );
       case "Option 4":
@@ -254,6 +306,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             imageTopSize={imageTopSize}
             selectSSOption={selectSSOption}
             batteryOption={batteryOption}
+            top={top}
+            setTop={setTop}
+            brandTop={brandTop} 
+            setBrandTop={setBrandTop}
           />
         );
       case "Option 5":
@@ -276,6 +332,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             imageTopSize={imageTopSize}
             selectSSOption={selectSSOption}
             batteryOption={batteryOption}
+            top={top}
+            setTop={setTop}
+            brandTop={brandTop} 
+            setBrandTop={setBrandTop}
           />
         );
       case "Option 6":
@@ -298,6 +358,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             imageTopSize={imageTopSize}
             selectSSOption={selectSSOption}
             batteryOption={batteryOption}
+            top={top}
+            setTop={setTop}
+            brandTop={brandTop} 
+            setBrandTop={setBrandTop}
           />
         );
       case "Option 7":
@@ -320,6 +384,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             imageTopSize={imageTopSize}
             selectSSOption={selectSSOption}
             batteryOption={batteryOption}
+            top={top}
+            setTop={setTop}
+            brandTop={brandTop} 
+            setBrandTop={setBrandTop}
           />
         );
       case "Option 8":
@@ -342,6 +410,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             imageTopSize={imageTopSize}
             selectSSOption={selectSSOption}
             batteryOption={batteryOption}
+            top={top}
+            setTop={setTop}
+            brandTop={brandTop} 
+            setBrandTop={setBrandTop}
           />
         );
       case "Option 9":
@@ -364,6 +436,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             imageTopSize={imageTopSize}
             selectSSOption={selectSSOption}
             batteryOption={batteryOption}
+            top={top}
+            setTop={setTop}
+            brandTop={brandTop} 
+            setBrandTop={setBrandTop}
           />
         );
       case "Option 10":
@@ -386,6 +462,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             imageTopSize={imageTopSize}
             selectSSOption={selectSSOption}
             batteryOption={batteryOption}
+            top={top}
+            setTop={setTop}
+            brandTop={brandTop} 
+            setBrandTop={setBrandTop}
           />
         );
       default:
@@ -426,6 +506,13 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             />
             <Select
               className="ml-2 dropdown-size"
+              placeholder="Top"
+              value={topAdCopy}
+              onChange={handleOnChangeTopAdCopy}
+              options={topAdCopyOption}
+            />
+            <Select
+              className="ml-2 dropdown-size"
               placeholder="Size"
               value={optionImageText}
               onChange={handleOnChangeImageText}
@@ -444,6 +531,13 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
                 setBrandText(e.target.value);
               }}
               maxLength={20}
+            />
+            <Select
+              className="ml-2 dropdown-size"
+              placeholder="Top"
+              value={topBrand}
+              onChange={handleOnChangeTopBrand}
+              options={topBrandOption}
             />
             <Select
               className="ml-2 dropdown-size"

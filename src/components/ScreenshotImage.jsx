@@ -148,7 +148,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
   useEffect(() => {
     let values;
     let topSizeArr = [];
-    for (let index = top - 10; index < top + 10; index++) {
+    for (let index = brandTop - 10; index < brandTop + 10; index++) {
       values = { value: index, label: index };
       topSizeArr.push(values);
     }

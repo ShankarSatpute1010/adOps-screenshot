@@ -18,6 +18,7 @@ import Option7Content from "./ssOptions/Option7Content";
 import Option8Content from "./ssOptions/Option8Content";
 import Option9Content from "./ssOptions/Option9Content";
 import Option10Content from "./ssOptions/Option10Content";
+import Option11Content from "./ssOptions/Option11Content";
 
 export const ScreenshotImage = ({ croppedImageUrl }) => {
   const [brandText, setBrandText] = useState("");
@@ -161,7 +162,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
 
   useEffect(() => {
     let options = [];
-    let limit = 10;
+    let limit = 11;
     let values;
     for (let index = 1; index <= limit; index++) {
       values = { value: `Option ${index}`, label: `Option ${index}` };
@@ -230,7 +231,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             batteryOption={batteryOption}
             top={top}
             setTop={setTop}
-            brandTop={brandTop} 
+            brandTop={brandTop}
             setBrandTop={setBrandTop}
           />
         );
@@ -256,7 +257,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             batteryOption={batteryOption}
             top={top}
             setTop={setTop}
-            brandTop={brandTop} 
+            brandTop={brandTop}
             setBrandTop={setBrandTop}
           />
         );
@@ -282,7 +283,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             batteryOption={batteryOption}
             top={top}
             setTop={setTop}
-            brandTop={brandTop} 
+            brandTop={brandTop}
             setBrandTop={setBrandTop}
           />
         );
@@ -308,7 +309,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             batteryOption={batteryOption}
             top={top}
             setTop={setTop}
-            brandTop={brandTop} 
+            brandTop={brandTop}
             setBrandTop={setBrandTop}
           />
         );
@@ -334,7 +335,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             batteryOption={batteryOption}
             top={top}
             setTop={setTop}
-            brandTop={brandTop} 
+            brandTop={brandTop}
             setBrandTop={setBrandTop}
           />
         );
@@ -360,7 +361,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             batteryOption={batteryOption}
             top={top}
             setTop={setTop}
-            brandTop={brandTop} 
+            brandTop={brandTop}
             setBrandTop={setBrandTop}
           />
         );
@@ -386,7 +387,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             batteryOption={batteryOption}
             top={top}
             setTop={setTop}
-            brandTop={brandTop} 
+            brandTop={brandTop}
             setBrandTop={setBrandTop}
           />
         );
@@ -412,7 +413,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             batteryOption={batteryOption}
             top={top}
             setTop={setTop}
-            brandTop={brandTop} 
+            brandTop={brandTop}
             setBrandTop={setBrandTop}
           />
         );
@@ -438,7 +439,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             batteryOption={batteryOption}
             top={top}
             setTop={setTop}
-            brandTop={brandTop} 
+            brandTop={brandTop}
             setBrandTop={setBrandTop}
           />
         );
@@ -464,10 +465,37 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             batteryOption={batteryOption}
             top={top}
             setTop={setTop}
-            brandTop={brandTop} 
+            brandTop={brandTop}
             setBrandTop={setBrandTop}
           />
         );
+      case "Option 11":
+        return (
+          <Option11Content
+            formattedDate={formattedDate}
+            siteFontSize={siteFontSize}
+            logoCrop={logoCrop}
+            fontBrandText={fontBrandText}
+            fontImageText={fontImageText}
+            brandText={brandText}
+            croppedImageUrl={croppedImageUrl}
+            imageTop={imageTop}
+            siteText={siteText}
+            siteTime={siteTime}
+            imageText={imageText}
+            format={format}
+            startDate={startDate}
+            setImageTopSize={setImageTopSize}
+            imageTopSize={imageTopSize}
+            selectSSOption={selectSSOption}
+            batteryOption={batteryOption}
+            top={top}
+            setTop={setTop}
+            brandTop={brandTop}
+            setBrandTop={setBrandTop}
+          />
+        );
+
       default:
         return <p>Select an option to see the content</p>;
     }

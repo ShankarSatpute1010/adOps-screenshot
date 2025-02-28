@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.option-eleven {
+    color: black;
+}
+
+.option-eleven .image-text {
+    width: 300px;
+    height: auto;
+}
+
+.option-eleven .screen-image {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 775px;
+    background: #333333;
+    border-radius: 0px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.option-eleven .dropdown-size {
+    width: 130px;
+}
+
+.option-eleven .brand-image {
+    position: relative;
+    border-radius: 10px;
+    left: 60px;
+}
+
+.option-eleven .image-text-heading {
+    position: absolute;
+    top: 360px;
+    left: 60px;
+    width: 260px;
+    line-height: 1.2;
+    color: #52494c;
+    font-family: "Roboto", sans-serif;
+}
+
+.option-eleven .image-text-site {
+    color: #8f8e8e;
+}
+
+.option-eleven .image-text-chrome {
+    color: #52494c;
+    font-size: 11px;
+}
+
+.option-eleven .chrome-logo {
+    width: 16px;
+    border-radius: 50%;
+}
+
+.option-eleven .logo-crop {
+    position: absolute;
+    right: 70px;
+    top: 320px;
+    width: 50px;
+    border-radius: 3px;
+}
+
+.option-eleven .image-text-brand {
+    position: absolute;
+    top: 342px;
+    left: 60px;
+    width: 250px;
+}
+
+.option-eleven .date-format-time {
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    width: 90px;
+    font-size: 16px;
+    color: #e7e7e7;
+}
+
+.image-text-time {
+    color: #bcbcbc;
+}
+
+.option-eleven .heading-text-notif {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    top: 315px;
+    left: 57px;
+    color: black;
+}
+
+.option-eleven .leftSize {
+    margin-left: 5px;
+    color: #8f8e8e;
+}

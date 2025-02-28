@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import "../ScreenshotImage.css";
+import "./Option11.css";
 
-const Option1Content = ({
+const Option11Content = ({
   formattedDate,
   siteFontSize,
   logoCrop,
@@ -22,61 +22,50 @@ const Option1Content = ({
   top,
   setTop,
   brandTop,
-  setBrandTop
+  setBrandTop,
 }) => {
 
   useEffect(() => {
-    formattedDate = format(startDate, "HH:mm EEEE, MMM d");
+    formattedDate = format(startDate, "H:m EEE, d MMM");
   }, []);
 
   useEffect(() => {
-    if (selectSSOption.value == "Option 1") {
-      setImageTopSize(355);
-      setTop(312);
-      setBrandTop(300);
+    if (selectSSOption.value == "Option 11") {
+      setImageTopSize(450);
+      setTop(360);
+      setBrandTop(342);
     }
   }, [imageTopSize, selectSSOption]);
 
-
   return (
-    <div className="option-one">
+    <div className="option-eleven">
       <img
         style={{ width: "100%" }}
-        src="https://demo.adgebra.in/custom/images/Blank_screenshot.jpg"
+        src="https://demo.adgebra.in/custom/images/webss.jpg"
         alt="Blank Screenshot"
       />
-
       <img
-        style={{ position: "absolute", top: "10px", right: '24px', width: '13px' }}
+        style={{
+          position: "absolute",
+          top: "79px",
+          right: "19px",
+          width: "15px",
+          transform: "rotate(90deg)",
+        }}
         src={batteryOption?.url}
         alt="battery"
       />
       <span className="date-format-time">
-        {formattedDate ? formattedDate : ""}
+        {formattedDate ? (
+          <>
+            <span style={{fontSize: '25px'}}>{formattedDate.split(" ")[0]}</span> <br />
+            {formattedDate.split(" ").slice(1).join(" ")}
+          </>
+        ) : (
+          ""
+        )}
       </span>
       <div className="heading-text-notif">
-        <img
-          className="chrome-logo"
-          src="https://demo.adgebra.in/custom/images/Chrome-Logo-png.png"
-          alt="Logo"
-        />
-        <span
-          className="image-text-chrome leftSize"
-          style={{ fontSize: siteFontSize }}
-        >
-          Chrome
-        </span>
-        <span
-          className="leftSize"
-          style={{
-            position: "relative",
-            top: "-5px",
-            fontSize: "18px",
-            color: "#bcbcbc",
-          }}
-        >
-          .
-        </span>
         <span
           className="image-text-site leftSize"
           style={{ fontSize: siteFontSize }}
@@ -89,7 +78,6 @@ const Option1Content = ({
             position: "relative",
             top: "-5px",
             fontSize: "18px",
-            color: "#bcbcbc",
           }}
         >
           .
@@ -102,10 +90,16 @@ const Option1Content = ({
         </span>
       </div>
       {logoCrop ? <img className="logo-crop" src={logoCrop} alt="Logo" /> : ""}
-      <span className="image-text-brand" style={{ fontSize: fontBrandText, top: brandTop + 'px' }}>
+      <span
+        className="image-text-brand"
+        style={{ fontSize: fontBrandText, top: brandTop + "px" }}
+      >
         {brandText}
       </span>
-      <span className="image-text-heading" style={{ fontSize: fontImageText, top: top + 'px' }}>
+      <span
+        className="image-text-heading"
+        style={{ fontSize: fontImageText, top: top + "px" }}
+      >
         {imageText}
       </span>
       <div
@@ -115,7 +109,7 @@ const Option1Content = ({
           className="brand-image"
           src={croppedImageUrl}
           style={{
-            width: "300px",
+            width: "265px",
             height: "auto",
             top: (imageTop?.value ? imageTop?.value : 355) + "px",
           }}
@@ -126,4 +120,4 @@ const Option1Content = ({
   );
 };
 
-export default Option1Content;
+export default Option11Content;

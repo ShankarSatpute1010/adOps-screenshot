@@ -48,7 +48,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
 
   const [ssOption, setSSOption] = useState([]);
 
-  // AdCopyOption - Top
+  // AdCopyOption - Top value
   const [topAdCopy, setTopAdCopy] = useState(null);
   const [topAdCopyOption, setTopAdCopyOption] = useState({});
   const [top, setTop] = useState();
@@ -125,6 +125,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
   }, []);
 
   const formattedDate = format(startDate, "HH:mm EEE, MMM d");
+ 
 
   useEffect(() => {
     let values;

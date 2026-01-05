@@ -22,9 +22,8 @@ const Option3Content = ({
   top,
   setTop,
   brandTop,
-  setBrandTop
+  setBrandTop,
 }) => {
-  
   useEffect(() => {
     formattedDate = format(startDate, "HH:MM EEE, d MMM ");
   }, []);
@@ -33,7 +32,7 @@ const Option3Content = ({
     if (selectSSOption.value == "Option 3") {
       setImageTopSize(390);
       setTop(357);
-      setBrandTop(337)
+      setBrandTop(337);
     }
   }, [imageTopSize, selectSSOption]);
 
@@ -83,10 +82,16 @@ const Option3Content = ({
         </span>
       </div>
       {logoCrop ? <img className="logo-crop" src={logoCrop} alt="Logo" /> : ""}
-      <span className="image-text-brand" style={{ fontSize: fontBrandText, top: brandTop + 'px' }}>
+      <span
+        className="image-text-brand"
+        style={{ fontSize: fontBrandText, top: brandTop + "px" }}
+      >
         {brandText}
       </span>
-      <span className="image-text-heading" style={{ fontSize: fontImageText, top: top + 'px' }}>
+      <span
+        className="image-text-heading"
+        style={{ fontSize: fontImageText, top: top + "px" }}
+      >
         {imageText}
       </span>
       <div

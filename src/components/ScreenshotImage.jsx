@@ -20,6 +20,8 @@ import Option9Content from "./ssOptions/Option9Content";
 import Option10Content from "./ssOptions/Option10Content";
 import Option11Content from "./ssOptions/Option11Content";
 
+import { SketchPicker } from "react-color";
+
 export const ScreenshotImage = ({ croppedImageUrl }) => {
   const [brandText, setBrandText] = useState("");
   const [imageText, setImageText] = useState("");
@@ -70,6 +72,12 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
     label: "Battery 20%",
     url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_1.png",
   });
+
+  const [imageTextColor, setImageTextColor] = useState("#b3afaf");
+  const [brandTextColor, setBrandTextColor] = useState("#ffff");
+  const [siteTextColor, setSiteTextColor] = useState("#bcbcbc");
+
+  const [showPicker, setShowPicker] = useState(null);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -125,7 +133,6 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
   }, []);
 
   const formattedDate = format(startDate, "HH:mm EEE, MMM d");
- 
 
   useEffect(() => {
     let values;
@@ -209,297 +216,59 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
   };
 
   const renderOptionContent = () => {
-    switch (selectSSOption?.value) {
-      case "Option 1":
-        return (
-          <Option1Content
-            formattedDate={formattedDate}
-            siteFontSize={siteFontSize}
-            logoCrop={logoCrop}
-            fontBrandText={fontBrandText}
-            fontImageText={fontImageText}
-            brandText={brandText}
-            croppedImageUrl={croppedImageUrl}
-            imageTop={imageTop}
-            siteText={siteText}
-            siteTime={siteTime}
-            imageText={imageText}
-            format={format}
-            startDate={startDate}
-            setImageTopSize={setImageTopSize}
-            imageTopSize={imageTopSize}
-            selectSSOption={selectSSOption}
-            batteryOption={batteryOption}
-            top={top}
-            setTop={setTop}
-            brandTop={brandTop}
-            setBrandTop={setBrandTop}
-          />
-        );
-      case "Option 2":
-        return (
-          <Option2Content
-            formattedDate={formattedDate}
-            siteFontSize={siteFontSize}
-            logoCrop={logoCrop}
-            fontBrandText={fontBrandText}
-            fontImageText={fontImageText}
-            brandText={brandText}
-            croppedImageUrl={croppedImageUrl}
-            imageTop={imageTop}
-            siteText={siteText}
-            siteTime={siteTime}
-            imageText={imageText}
-            format={format}
-            startDate={startDate}
-            setImageTopSize={setImageTopSize}
-            imageTopSize={imageTopSize}
-            selectSSOption={selectSSOption}
-            batteryOption={batteryOption}
-            top={top}
-            setTop={setTop}
-            brandTop={brandTop}
-            setBrandTop={setBrandTop}
-          />
-        );
-      case "Option 3":
-        return (
-          <Option3Content
-            formattedDate={formattedDate}
-            siteFontSize={siteFontSize}
-            logoCrop={logoCrop}
-            fontBrandText={fontBrandText}
-            fontImageText={fontImageText}
-            brandText={brandText}
-            croppedImageUrl={croppedImageUrl}
-            imageTop={imageTop}
-            siteText={siteText}
-            siteTime={siteTime}
-            imageText={imageText}
-            format={format}
-            startDate={startDate}
-            setImageTopSize={setImageTopSize}
-            imageTopSize={imageTopSize}
-            selectSSOption={selectSSOption}
-            batteryOption={batteryOption}
-            top={top}
-            setTop={setTop}
-            brandTop={brandTop}
-            setBrandTop={setBrandTop}
-          />
-        );
-      case "Option 4":
-        return (
-          <Option4Content
-            formattedDate={formattedDate}
-            siteFontSize={siteFontSize}
-            logoCrop={logoCrop}
-            fontBrandText={fontBrandText}
-            fontImageText={fontImageText}
-            brandText={brandText}
-            croppedImageUrl={croppedImageUrl}
-            imageTop={imageTop}
-            siteText={siteText}
-            siteTime={siteTime}
-            imageText={imageText}
-            format={format}
-            startDate={startDate}
-            setImageTopSize={setImageTopSize}
-            imageTopSize={imageTopSize}
-            selectSSOption={selectSSOption}
-            batteryOption={batteryOption}
-            top={top}
-            setTop={setTop}
-            brandTop={brandTop}
-            setBrandTop={setBrandTop}
-          />
-        );
-      case "Option 5":
-        return (
-          <Option5Content
-            formattedDate={formattedDate}
-            siteFontSize={siteFontSize}
-            logoCrop={logoCrop}
-            fontBrandText={fontBrandText}
-            fontImageText={fontImageText}
-            brandText={brandText}
-            croppedImageUrl={croppedImageUrl}
-            imageTop={imageTop}
-            siteText={siteText}
-            siteTime={siteTime}
-            imageText={imageText}
-            format={format}
-            startDate={startDate}
-            setImageTopSize={setImageTopSize}
-            imageTopSize={imageTopSize}
-            selectSSOption={selectSSOption}
-            batteryOption={batteryOption}
-            top={top}
-            setTop={setTop}
-            brandTop={brandTop}
-            setBrandTop={setBrandTop}
-          />
-        );
-      case "Option 6":
-        return (
-          <Option6Content
-            formattedDate={formattedDate}
-            siteFontSize={siteFontSize}
-            logoCrop={logoCrop}
-            fontBrandText={fontBrandText}
-            fontImageText={fontImageText}
-            brandText={brandText}
-            croppedImageUrl={croppedImageUrl}
-            imageTop={imageTop}
-            siteText={siteText}
-            siteTime={siteTime}
-            imageText={imageText}
-            format={format}
-            startDate={startDate}
-            setImageTopSize={setImageTopSize}
-            imageTopSize={imageTopSize}
-            selectSSOption={selectSSOption}
-            batteryOption={batteryOption}
-            top={top}
-            setTop={setTop}
-            brandTop={brandTop}
-            setBrandTop={setBrandTop}
-          />
-        );
-      case "Option 7":
-        return (
-          <Option7Content
-            formattedDate={formattedDate}
-            siteFontSize={siteFontSize}
-            logoCrop={logoCrop}
-            fontBrandText={fontBrandText}
-            fontImageText={fontImageText}
-            brandText={brandText}
-            croppedImageUrl={croppedImageUrl}
-            imageTop={imageTop}
-            siteText={siteText}
-            siteTime={siteTime}
-            imageText={imageText}
-            format={format}
-            startDate={startDate}
-            setImageTopSize={setImageTopSize}
-            imageTopSize={imageTopSize}
-            selectSSOption={selectSSOption}
-            batteryOption={batteryOption}
-            top={top}
-            setTop={setTop}
-            brandTop={brandTop}
-            setBrandTop={setBrandTop}
-          />
-        );
-      case "Option 8":
-        return (
-          <Option8Content
-            formattedDate={formattedDate}
-            siteFontSize={siteFontSize}
-            logoCrop={logoCrop}
-            fontBrandText={fontBrandText}
-            fontImageText={fontImageText}
-            brandText={brandText}
-            croppedImageUrl={croppedImageUrl}
-            imageTop={imageTop}
-            siteText={siteText}
-            siteTime={siteTime}
-            imageText={imageText}
-            format={format}
-            startDate={startDate}
-            setImageTopSize={setImageTopSize}
-            imageTopSize={imageTopSize}
-            selectSSOption={selectSSOption}
-            batteryOption={batteryOption}
-            top={top}
-            setTop={setTop}
-            brandTop={brandTop}
-            setBrandTop={setBrandTop}
-          />
-        );
-      case "Option 9":
-        return (
-          <Option9Content
-            formattedDate={formattedDate}
-            siteFontSize={siteFontSize}
-            logoCrop={logoCrop}
-            fontBrandText={fontBrandText}
-            fontImageText={fontImageText}
-            brandText={brandText}
-            croppedImageUrl={croppedImageUrl}
-            imageTop={imageTop}
-            siteText={siteText}
-            siteTime={siteTime}
-            imageText={imageText}
-            format={format}
-            startDate={startDate}
-            setImageTopSize={setImageTopSize}
-            imageTopSize={imageTopSize}
-            selectSSOption={selectSSOption}
-            batteryOption={batteryOption}
-            top={top}
-            setTop={setTop}
-            brandTop={brandTop}
-            setBrandTop={setBrandTop}
-          />
-        );
-      case "Option 10":
-        return (
-          <Option10Content
-            formattedDate={formattedDate}
-            siteFontSize={siteFontSize}
-            logoCrop={logoCrop}
-            fontBrandText={fontBrandText}
-            fontImageText={fontImageText}
-            brandText={brandText}
-            croppedImageUrl={croppedImageUrl}
-            imageTop={imageTop}
-            siteText={siteText}
-            siteTime={siteTime}
-            imageText={imageText}
-            format={format}
-            startDate={startDate}
-            setImageTopSize={setImageTopSize}
-            imageTopSize={imageTopSize}
-            selectSSOption={selectSSOption}
-            batteryOption={batteryOption}
-            top={top}
-            setTop={setTop}
-            brandTop={brandTop}
-            setBrandTop={setBrandTop}
-          />
-        );
-      case "Option 11":
-        return (
-          <Option11Content
-            formattedDate={formattedDate}
-            siteFontSize={siteFontSize}
-            logoCrop={logoCrop}
-            fontBrandText={fontBrandText}
-            fontImageText={fontImageText}
-            brandText={brandText}
-            croppedImageUrl={croppedImageUrl}
-            imageTop={imageTop}
-            siteText={siteText}
-            siteTime={siteTime}
-            imageText={imageText}
-            format={format}
-            startDate={startDate}
-            setImageTopSize={setImageTopSize}
-            imageTopSize={imageTopSize}
-            selectSSOption={selectSSOption}
-            batteryOption={batteryOption}
-            top={top}
-            setTop={setTop}
-            brandTop={brandTop}
-            setBrandTop={setBrandTop}
-          />
-        );
+    // 1. Group all current and new props into one object
+    const commonProps = {
+      formattedDate,
+      siteFontSize,
+      logoCrop,
+      fontBrandText,
+      fontImageText,
+      brandText,
+      croppedImageUrl,
+      imageTop,
+      siteText,
+      siteTime,
+      imageText,
+      format,
+      startDate,
+      setImageTopSize,
+      imageTopSize,
+      selectSSOption,
+      batteryOption,
+      top,
+      setTop,
+      brandTop,
+      setBrandTop,
+      // Add the new color props here
+      brandTextColor,
+      imageTextColor,
+      siteTextColor,
+    };
 
-      default:
-        return <p>Select an option to see the content</p>;
-    }
+    // 2. Create a map of your components
+    const components = {
+      "Option 1": Option1Content,
+      "Option 2": Option2Content,
+      "Option 3": Option3Content,
+      "Option 4": Option4Content,
+      "Option 5": Option5Content,
+      "Option 6": Option6Content,
+      "Option 7": Option7Content,
+      "Option 8": Option8Content,
+      "Option 9": Option9Content,
+      "Option 10": Option10Content,
+      "Option 11": Option11Content,
+    };
+
+    // 3. Get the selected component based on dropdown value
+    const SelectedOption = components[selectSSOption?.value];
+
+    // 4. Return the component with all props spread into it
+    return SelectedOption ? (
+      <SelectedOption {...commonProps} />
+    ) : (
+      <p>Select an option to see the content</p>
+    );
   };
 
   return (
@@ -596,6 +365,151 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
               options={selectOptionSiteText}
             />
           </div>
+          <div
+            style={{
+              display: "flex",
+              gap: "20px",
+              alignItems: "flex-start",
+              marginBottom: "20px",
+              justifyContent: 'space-between'
+            }}
+          >
+            {/* --- Ad Copy Color Picker --- */}
+            <div className="form-group">
+              <label style={{ display: "block" }}>Ad Copy Color</label>
+              <div
+                style={{
+                  padding: "5px",
+                  background: "#fff",
+                  borderRadius: "4px",
+                  border: "1px solid #ccc",
+                  display: "inline-block",
+                  cursor: "pointer",
+                }}
+                onClick={() =>
+                  setShowPicker(showPicker === "image" ? null : "image")
+                }
+              >
+                <div
+                  style={{
+                    width: "36px",
+                    height: "14px",
+                    borderRadius: "2px",
+                    background: imageTextColor,
+                  }}
+                />
+              </div>
+              {showPicker === "image" && (
+                <div style={{ position: "absolute", zIndex: "2" }}>
+                  <div
+                    style={{
+                      position: "fixed",
+                      top: "0px",
+                      right: "0px",
+                      bottom: "0px",
+                      left: "0px",
+                    }}
+                    onClick={() => setShowPicker(null)}
+                  />
+                  <SketchPicker
+                    color={imageTextColor}
+                    onChange={(color) => setImageTextColor(color.hex)}
+                  />
+                </div>
+              )}
+            </div>
+
+            {/* --- Brand Text Color Picker --- */}
+            <div className="form-group">
+              <label style={{ display: "block" }}>Brand Text Color</label>
+              <div
+                style={{
+                  padding: "5px",
+                  background: "#fff",
+                  borderRadius: "4px",
+                  border: "1px solid #ccc",
+                  display: "inline-block",
+                  cursor: "pointer",
+                }}
+                onClick={() =>
+                  setShowPicker(showPicker === "brand" ? null : "brand")
+                }
+              >
+                <div
+                  style={{
+                    width: "36px",
+                    height: "14px",
+                    borderRadius: "2px",
+                    background: brandTextColor,
+                  }}
+                />
+              </div>
+              {showPicker === "brand" && (
+                <div style={{ position: "absolute", zIndex: "2" }}>
+                  <div
+                    style={{
+                      position: "fixed",
+                      top: "0px",
+                      right: "0px",
+                      bottom: "0px",
+                      left: "0px",
+                    }}
+                    onClick={() => setShowPicker(null)}
+                  />
+                  <SketchPicker
+                    color={brandTextColor}
+                    onChange={(color) => setBrandTextColor(color.hex)}
+                  />
+                </div>
+              )}
+            </div>
+
+            {/* --- Site Text Color Picker --- */}
+            <div className="form-group">
+              <label style={{ display: "block" }}>Site Text Color</label>
+              <div
+                style={{
+                  padding: "5px",
+                  background: "#fff",
+                  borderRadius: "4px",
+                  border: "1px solid #ccc",
+                  display: "inline-block",
+                  cursor: "pointer",
+                }}
+                onClick={() =>
+                  setShowPicker(showPicker === "site" ? null : "site")
+                }
+              >
+                <div
+                  style={{
+                    width: "36px",
+                    height: "14px",
+                    borderRadius: "2px",
+                    background: siteTextColor,
+                  }}
+                />
+              </div>
+              {showPicker === "site" && (
+                <div style={{ position: "absolute", zIndex: "2" }}>
+                  <div
+                    style={{
+                      position: "fixed",
+                      top: "0px",
+                      right: "0px",
+                      bottom: "0px",
+                      left: "0px",
+                    }}
+                    onClick={() => setShowPicker(null)}
+                  />
+                  <SketchPicker
+                    color={siteTextColor}
+                    onChange={(color) => setSiteTextColor(color.hex)}
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+
           <div className="d-flex w-100">
             <DatePicker
               className="form-control mb-4"

@@ -22,9 +22,12 @@ const Option9Content = ({
   top,
   setTop,
   brandTop,
-  setBrandTop
+  setBrandTop,
+  // 1. ADDED COLOR PROPS
+  brandTextColor,
+  imageTextColor,
+  siteTextColor,
 }) => {
-  
   useEffect(() => {
     formattedDate = format(startDate, "HH:MM EEE, d MMM ");
   }, []);
@@ -33,7 +36,7 @@ const Option9Content = ({
     if (selectSSOption.value == "Option 9") {
       setImageTopSize(365);
       setTop(280);
-      setBrandTop(363)
+      setBrandTop(363);
     }
   }, [imageTopSize, selectSSOption]);
 
@@ -59,9 +62,10 @@ const Option9Content = ({
         {formattedDate ? formattedDate : ""}
       </span>
       <div className="heading-text-notif">
+        {/* 2. APPLIED SITE TEXT COLOR */}
         <span
           className="image-text-site leftSize"
-          style={{ fontSize: siteFontSize }}
+          style={{ fontSize: siteFontSize, color: siteTextColor }}
         >
           {siteText}
         </span>
@@ -83,12 +87,31 @@ const Option9Content = ({
         </span>
       </div>
       {logoCrop ? <img className="logo-crop" src={logoCrop} alt="Logo" /> : ""}
-      <span className="image-text-brand" style={{ fontSize: fontBrandText, top: brandTop + 'px' }}>
+
+      {/* 3. APPLIED BRAND TEXT COLOR */}
+      <span
+        className="image-text-brand"
+        style={{
+          fontSize: fontBrandText,
+          top: brandTop + "px",
+          color: brandTextColor,
+        }}
+      >
         {brandText}
       </span>
-      <span className="image-text-heading" style={{ fontSize: fontImageText, top: top + 'px' }}>
+
+      {/* 4. APPLIED IMAGE HEADING COLOR */}
+      <span
+        className="image-text-heading"
+        style={{
+          fontSize: fontImageText,
+          top: top + "px",
+          color: imageTextColor,
+        }}
+      >
         {imageText}
       </span>
+
       <div
         style={{ position: "absolute", width: "100%", height: "100%", top: 0 }}
       >

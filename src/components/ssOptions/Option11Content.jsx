@@ -23,8 +23,11 @@ const Option11Content = ({
   setTop,
   brandTop,
   setBrandTop,
+  // 1. ADDED COLOR PROPS
+  brandTextColor,
+  imageTextColor,
+  siteTextColor,
 }) => {
-
   useEffect(() => {
     formattedDate = format(startDate, "H:m EEE, d MMM");
   }, []);
@@ -58,7 +61,10 @@ const Option11Content = ({
       <span className="date-format-time">
         {formattedDate ? (
           <>
-            <span style={{fontSize: '25px'}}>{formattedDate.split(" ")[0]}</span> <br />
+            <span style={{ fontSize: "25px" }}>
+              {formattedDate.split(" ")[0]}
+            </span>{" "}
+            <br />
             {formattedDate.split(" ").slice(1).join(" ")}
           </>
         ) : (
@@ -66,9 +72,10 @@ const Option11Content = ({
         )}
       </span>
       <div className="heading-text-notif">
+        {/* 2. APPLIED SITE TEXT COLOR */}
         <span
           className="image-text-site leftSize"
-          style={{ fontSize: siteFontSize }}
+          style={{ fontSize: siteFontSize, color: siteTextColor }}
         >
           {siteText}
         </span>
@@ -90,18 +97,31 @@ const Option11Content = ({
         </span>
       </div>
       {logoCrop ? <img className="logo-crop" src={logoCrop} alt="Logo" /> : ""}
+
+      {/* 3. APPLIED BRAND TEXT COLOR */}
       <span
         className="image-text-brand"
-        style={{ fontSize: fontBrandText, top: brandTop + "px" }}
+        style={{
+          fontSize: fontBrandText,
+          top: brandTop + "px",
+          color: brandTextColor,
+        }}
       >
         {brandText}
       </span>
+
+      {/* 4. APPLIED AD HEADING COLOR */}
       <span
         className="image-text-heading"
-        style={{ fontSize: fontImageText, top: top + "px" }}
+        style={{
+          fontSize: fontImageText,
+          top: top + "px",
+          color: imageTextColor,
+        }}
       >
         {imageText}
       </span>
+
       <div
         style={{ position: "absolute", width: "100%", height: "100%", top: 0 }}
       >

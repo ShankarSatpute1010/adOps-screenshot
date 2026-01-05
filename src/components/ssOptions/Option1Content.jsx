@@ -22,9 +22,12 @@ const Option1Content = ({
   top,
   setTop,
   brandTop,
-  setBrandTop
+  setBrandTop,
+  // 1. ADD THESE COLOR PROPS HERE
+  brandTextColor,
+  imageTextColor,
+  siteTextColor,
 }) => {
-
   useEffect(() => {
     formattedDate = format(startDate, "HH:mm EEEE, MMM d");
   }, []);
@@ -37,7 +40,6 @@ const Option1Content = ({
     }
   }, [imageTopSize, selectSSOption]);
 
-
   return (
     <div className="option-one">
       <img
@@ -47,7 +49,12 @@ const Option1Content = ({
       />
 
       <img
-        style={{ position: "absolute", top: "10px", right: '24px', width: '13px' }}
+        style={{
+          position: "absolute",
+          top: "10px",
+          right: "24px",
+          width: "13px",
+        }}
         src={batteryOption?.url}
         alt="battery"
       />
@@ -77,12 +84,15 @@ const Option1Content = ({
         >
           .
         </span>
+
+        {/* 2. APPLY SITE TEXT COLOR HERE */}
         <span
           className="image-text-site leftSize"
-          style={{ fontSize: siteFontSize }}
+          style={{ fontSize: siteFontSize, color: siteTextColor }}
         >
           {siteText}
         </span>
+
         <span
           className="leftSize"
           style={{
@@ -102,12 +112,31 @@ const Option1Content = ({
         </span>
       </div>
       {logoCrop ? <img className="logo-crop" src={logoCrop} alt="Logo" /> : ""}
-      <span className="image-text-brand" style={{ fontSize: fontBrandText, top: brandTop + 'px' }}>
+
+      {/* 3. APPLY BRAND TEXT COLOR HERE */}
+      <span
+        className="image-text-brand"
+        style={{
+          fontSize: fontBrandText,
+          top: brandTop + "px",
+          color: brandTextColor,
+        }}
+      >
         {brandText}
       </span>
-      <span className="image-text-heading" style={{ fontSize: fontImageText, top: top + 'px' }}>
+
+      {/* 4. APPLY IMAGE (AD COPY) TEXT COLOR HERE */}
+      <span
+        className="image-text-heading"
+        style={{
+          fontSize: fontImageText,
+          top: top + "px",
+          color: imageTextColor,
+        }}
+      >
         {imageText}
       </span>
+
       <div
         style={{ position: "absolute", width: "100%", height: "100%", top: 0 }}
       >

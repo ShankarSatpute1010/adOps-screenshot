@@ -23,6 +23,8 @@ const Option11Content = ({
   setTop,
   brandTop,
   setBrandTop,
+  siteTop,
+  setSiteTop,
   // 1. ADDED COLOR PROPS
   brandTextColor,
   imageTextColor,
@@ -37,6 +39,7 @@ const Option11Content = ({
       setImageTopSize(450);
       setTop(360);
       setBrandTop(342);
+      setSiteTop(300);
     }
   }, [imageTopSize, selectSSOption]);
 
@@ -71,8 +74,11 @@ const Option11Content = ({
           ""
         )}
       </span>
-      <div className="heading-text-notif">
-        {/* 2. APPLIED SITE TEXT COLOR */}
+      <div
+        className="heading-text-notif"
+        style={{ top: siteTop }}
+      >
+        {/* 2. APPLY SITE TEXT COLOR */}
         <span
           className="image-text-site leftSize"
           style={{ fontSize: siteFontSize, color: siteTextColor }}
@@ -85,6 +91,7 @@ const Option11Content = ({
             position: "relative",
             top: "-5px",
             fontSize: "18px",
+            color: "#bcbcbc",
           }}
         >
           .

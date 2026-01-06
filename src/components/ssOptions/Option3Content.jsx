@@ -19,10 +19,13 @@ const Option3Content = ({
   imageTopSize,
   selectSSOption,
   batteryOption,
+  siteTextColor,
   top,
   setTop,
   brandTop,
   setBrandTop,
+  siteTop,
+  setSiteTop,
 }) => {
   useEffect(() => {
     formattedDate = format(startDate, "HH:MM EEE, d MMM ");
@@ -33,6 +36,7 @@ const Option3Content = ({
       setImageTopSize(390);
       setTop(357);
       setBrandTop(337);
+      setSiteTop(300);
     }
   }, [imageTopSize, selectSSOption]);
 
@@ -57,10 +61,14 @@ const Option3Content = ({
       <span className="date-format-time">
         {formattedDate ? formattedDate : ""}
       </span>
-      <div className="heading-text-notif">
+      <div
+        className="heading-text-notif"
+        style={{ top: siteTop }}
+      >
+        {/* 2. APPLY SITE TEXT COLOR */}
         <span
           className="image-text-site leftSize"
-          style={{ fontSize: siteFontSize }}
+          style={{ fontSize: siteFontSize, color: siteTextColor }}
         >
           {siteText}
         </span>
@@ -70,6 +78,7 @@ const Option3Content = ({
             position: "relative",
             top: "-5px",
             fontSize: "18px",
+            color: "#bcbcbc",
           }}
         >
           .

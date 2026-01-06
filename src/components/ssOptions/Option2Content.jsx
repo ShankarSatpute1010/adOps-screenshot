@@ -23,6 +23,8 @@ const Option2Content = ({
   setTop,
   brandTop,
   setBrandTop,
+  siteTop,
+  setSiteTop,
   // 1. ADD COLOR PROPS HERE
   brandTextColor,
   imageTextColor,
@@ -36,7 +38,8 @@ const Option2Content = ({
     if (selectSSOption.value == "Option 2") {
       setImageTopSize(260);
       setTop(220);
-      setBrandTop(200);
+      setBrandTop(300);
+      setSiteTop(300);
     }
   }, [imageTopSize, selectSSOption]);
 
@@ -60,7 +63,11 @@ const Option2Content = ({
       <span className="date-format-time">
         {formattedDate ? formattedDate : ""}
       </span>
-      <div className="heading-text-notif">
+
+      <div
+        className="heading-text-notif"
+        style={{ top: siteTop }}
+      >
         {/* 2. APPLY SITE TEXT COLOR */}
         <span
           className="image-text-site leftSize"
@@ -86,6 +93,7 @@ const Option2Content = ({
           {siteTime}
         </span>
       </div>
+
       {logoCrop ? <img className="logo-crop" src={logoCrop} alt="Logo" /> : ""}
 
       {/* 3. APPLY BRAND TEXT COLOR */}

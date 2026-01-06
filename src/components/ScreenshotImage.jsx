@@ -60,11 +60,16 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
   const [topBrandOption, setTopBrandOption] = useState({});
   const [brandTop, setBrandTop] = useState();
 
+  // siteOption - Top
+  const [topSite, setTopSite] = useState(null);
+  const [topSiteOption, setTopSiteOption] = useState({});
+  const [siteTop, setSiteTop] = useState();
+
   const [selectSSOption, setSelectSSOption] = useState({
     value: "Option 1",
     label: "Option 1",
   });
-
+  
   const [imageTopSize, setImageTopSize] = useState(355);
 
   const [batteryOption, setBatteryOption] = useState({
@@ -73,6 +78,8 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
     url: "https://demo.adgebra.in/custom/fbss/Facebook_Screenshot/Battery_1.png",
   });
 
+  // Color Variables options:-
+  
   const [imageTextColor, setImageTextColor] = useState("#b3afaf");
   const [brandTextColor, setBrandTextColor] = useState("#ffff");
   const [siteTextColor, setSiteTextColor] = useState("#bcbcbc");
@@ -107,6 +114,11 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
   const handleOnChangeTopBrand = (event) => {
     setTopBrand(event);
     setBrandTop(event.value);
+  };
+
+  const handleOnChangeSite = (event) => {
+    setTopSite(event);
+    setSiteTop(event.value);
   };
 
   const handleOnChangeBrandText = (event) => {
@@ -163,6 +175,16 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
     }
     setTopBrandOption(topSizeArr);
   }, [brandTop]);
+
+  useEffect(() => {
+    let values;
+    let topSizeArr = [];
+    for (let index = siteTop - 10; index < siteTop + 10; index++) {
+      values = { value: index, label: index };
+      topSizeArr.push(values);
+    }
+    setTopSiteOption(topSizeArr);
+  }, [siteTop]);
 
   const handleImageTop = (e) => {
     setImageTop(e);
@@ -239,6 +261,8 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
       setTop,
       brandTop,
       setBrandTop,
+      siteTop,
+      setSiteTop,
       // Add the new color props here
       brandTextColor,
       imageTextColor,
@@ -356,6 +380,13 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
               onChange={(e) => {
                 setSiteText(e.target.value);
               }}
+            />
+            <Select
+              className="ml-2 dropdown-size"
+              placeholder="Top"
+              value={topSite}
+              onChange={handleOnChangeSite}
+              options={topSiteOption}
             />
             <Select
               className="ml-2 dropdown-size"

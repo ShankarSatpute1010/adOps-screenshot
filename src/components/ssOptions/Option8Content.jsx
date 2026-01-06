@@ -23,6 +23,8 @@ const Option8Content = ({
   setTop,
   brandTop,
   setBrandTop,
+  siteTop,
+  setSiteTop,
   // 1. ADD COLOR PROPS HERE
   brandTextColor,
   imageTextColor,
@@ -37,6 +39,7 @@ const Option8Content = ({
       setImageTopSize(425);
       setTop(360);
       setBrandTop(342);
+      setSiteTop(300);
     }
   }, [imageTopSize, selectSSOption]);
 
@@ -61,7 +64,10 @@ const Option8Content = ({
       <span className="date-format-time">
         {formattedDate ? formattedDate : ""}
       </span>
-      <div className="heading-text-notif">
+      <div
+        className="heading-text-notif"
+        style={{ top: siteTop }}
+      >
         {/* 2. APPLY SITE TEXT COLOR */}
         <span
           className="image-text-site leftSize"
@@ -75,6 +81,7 @@ const Option8Content = ({
             position: "relative",
             top: "-5px",
             fontSize: "18px",
+            color: "#bcbcbc",
           }}
         >
           .

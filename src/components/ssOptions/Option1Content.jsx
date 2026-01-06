@@ -23,6 +23,8 @@ const Option1Content = ({
   setTop,
   brandTop,
   setBrandTop,
+  siteTop,
+  setSiteTop,
   // 1. ADD THESE COLOR PROPS HERE
   brandTextColor,
   imageTextColor,
@@ -37,6 +39,7 @@ const Option1Content = ({
       setImageTopSize(355);
       setTop(312);
       setBrandTop(300);
+      setSiteTop(300);
     }
   }, [imageTopSize, selectSSOption]);
 
@@ -61,38 +64,14 @@ const Option1Content = ({
       <span className="date-format-time">
         {formattedDate ? formattedDate : ""}
       </span>
-      <div className="heading-text-notif">
-        <img
-          className="chrome-logo"
-          src="https://demo.adgebra.in/custom/images/Chrome-Logo-png.png"
-          alt="Logo"
-        />
-        <span
-          className="image-text-chrome leftSize"
-          style={{ fontSize: siteFontSize }}
-        >
-          Chrome
-        </span>
-        <span
-          className="leftSize"
-          style={{
-            position: "relative",
-            top: "-5px",
-            fontSize: "18px",
-            color: "#bcbcbc",
-          }}
-        >
-          .
-        </span>
-
-        {/* 2. APPLY SITE TEXT COLOR HERE */}
+      <div className="heading-text-notif" style={{ top: siteTop }}>
+        {/* 2. APPLY SITE TEXT COLOR */}
         <span
           className="image-text-site leftSize"
           style={{ fontSize: siteFontSize, color: siteTextColor }}
         >
           {siteText}
         </span>
-
         <span
           className="leftSize"
           style={{

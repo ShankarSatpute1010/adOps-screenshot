@@ -24,6 +24,8 @@ const Option3Content = ({
   setTop,
   brandTop,
   setBrandTop,
+  topLogo,
+  rightLogo,
   siteTop,
   setSiteTop,
 }) => {
@@ -61,10 +63,7 @@ const Option3Content = ({
       <span className="date-format-time">
         {formattedDate ? formattedDate : ""}
       </span>
-      <div
-        className="heading-text-notif"
-        style={{ top: siteTop }}
-      >
+      <div className="heading-text-notif" style={{ top: siteTop }}>
         {/* 2. APPLY SITE TEXT COLOR */}
         <span
           className="image-text-site leftSize"
@@ -90,7 +89,20 @@ const Option3Content = ({
           {siteTime}
         </span>
       </div>
-      {logoCrop ? <img className="logo-crop" src={logoCrop} alt="Logo" /> : ""}
+      {logoCrop ? (
+        <img
+          className="logo-crop"
+          src={logoCrop}
+          alt="Logo"
+          style={{
+            top: `${topLogo.value}px`,
+            right: `${rightLogo.value}px`,
+            position: "absolute", // Ensures the top/right properties work
+          }}
+        />
+      ) : (
+        ""
+      )}
       <span
         className="image-text-brand"
         style={{ fontSize: fontBrandText, top: brandTop + "px" }}

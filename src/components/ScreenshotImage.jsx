@@ -65,11 +65,29 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
   const [topSiteOption, setTopSiteOption] = useState({});
   const [siteTop, setSiteTop] = useState();
 
+  // State for the currently selected values
+
+  const initialTopLogo = 304;
+  const initialRightLogo = 26;
+
+  const [topLogo, setTopLogo] = useState({
+    value: initialTopLogo,
+    label: initialTopLogo,
+  });
+  const [rightLogo, setRightLogo] = useState({
+    value: initialRightLogo,
+    label: initialRightLogo,
+  });
+
+  // State for the dropdown lists
+  const [topOptionsLogo, setTopOptionsLogo] = useState([]);
+  const [rightOptionsLogo, setRightOptionsLogo] = useState([]);
+
   const [selectSSOption, setSelectSSOption] = useState({
     value: "Option 1",
     label: "Option 1",
   });
-  
+
   const [imageTopSize, setImageTopSize] = useState(355);
 
   const [batteryOption, setBatteryOption] = useState({
@@ -79,7 +97,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
   });
 
   // Color Variables options:-
-  
+
   const [imageTextColor, setImageTextColor] = useState("#b3afaf");
   const [brandTextColor, setBrandTextColor] = useState("#ffff");
   const [siteTextColor, setSiteTextColor] = useState("#bcbcbc");
@@ -201,6 +219,20 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
     setSSOption(options);
   }, []);
 
+  useEffect(() => {
+    const tOptions = [];
+    for (let i = initialTopLogo - 100; i <= initialTopLogo + 100; i++) {
+      tOptions.push({ value: i, label: `${i}` });
+    }
+    setTopOptionsLogo(tOptions);
+
+    const rOptions = [];
+    for (let i = initialRightLogo - 100; i <= initialRightLogo + 100; i++) {
+      rOptions.push({ value: i, label: `${i}` });
+    }
+    setRightOptionsLogo(rOptions);
+  }, [rightLogo, topLogo]);
+
   const handleScreenshotOption = (event) => {
     setSelectSSOption(event);
   };
@@ -263,6 +295,8 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
       setBrandTop,
       siteTop,
       setSiteTop,
+      topLogo,
+      rightLogo,
       // Add the new color props here
       brandTextColor,
       imageTextColor,
@@ -402,7 +436,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
               gap: "20px",
               alignItems: "flex-start",
               marginBottom: "20px",
-              justifyContent: 'space-between'
+              justifyContent: "space-between",
             }}
           >
             {/* --- Ad Copy Color Picker --- */}
@@ -541,7 +575,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             </div>
           </div>
 
-          <div className="d-flex w-100">
+          <div className="d-flex w-100 align-items-center">
             <DatePicker
               className="form-control mb-4"
               placeholderText="Select Date"
@@ -550,20 +584,61 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
               showTimeSelect
               dateFormat="Pp"
             />
+
             <Button
-              className="submit-button mx-2"
+              className="submit-button mx-2 mb-4"
               variant="contained"
               style={{ height: "37px", width: "150px" }}
               onClick={handleShow}
             >
               Crop Logo
             </Button>
+
             <LogoCrop
               show={show}
               handleClose={handleClose}
               setLogoCrop={setLogoCrop}
             />
+
+            {logoCrop ? (
+              <div className="d-flex align-items-center">
+                <div className="ml-2 mb-4">
+                  <small className="d-block text-muted mb-1">
+                    Top
+                  </small>
+                  <Select
+                    className="dropdown-size"
+                    placeholder="Top"
+                    value={topLogo}
+                    onChange={(selected) => setTopLogo(selected)}
+                    options={topOptionsLogo}
+                    styles={{
+                      container: (base) => ({ ...base, width: "120px" }),
+                    }}
+                  />
+                </div>
+
+                <div className="ml-2 mb-4">
+                  <small className="d-block text-muted mb-1">
+                    Right
+                  </small>
+                  <Select
+                    className="dropdown-size"
+                    placeholder="Right"
+                    value={rightLogo}
+                    onChange={(selected) => setRightLogo(selected)}
+                    options={rightOptionsLogo}
+                    styles={{
+                      container: (base) => ({ ...base, width: "120px" }),
+                    }}
+                  />
+                </div>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
+
           <div className="form-group w-100">
             <Select
               className="dropdown-size w-100"

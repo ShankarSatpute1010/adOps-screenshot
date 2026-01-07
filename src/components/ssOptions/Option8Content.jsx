@@ -25,6 +25,8 @@ const Option8Content = ({
   setBrandTop,
   siteTop,
   setSiteTop,
+  topLogo,
+  rightLogo,
   // 1. ADD COLOR PROPS HERE
   brandTextColor,
   imageTextColor,
@@ -64,10 +66,7 @@ const Option8Content = ({
       <span className="date-format-time">
         {formattedDate ? formattedDate : ""}
       </span>
-      <div
-        className="heading-text-notif"
-        style={{ top: siteTop }}
-      >
+      <div className="heading-text-notif" style={{ top: siteTop }}>
         {/* 2. APPLY SITE TEXT COLOR */}
         <span
           className="image-text-site leftSize"
@@ -93,8 +92,20 @@ const Option8Content = ({
           {siteTime}
         </span>
       </div>
-      {logoCrop ? <img className="logo-crop" src={logoCrop} alt="Logo" /> : ""}
-
+      {logoCrop ? (
+        <img
+          className="logo-crop"
+          src={logoCrop}
+          alt="Logo"
+          style={{
+            top: `${topLogo.value}px`,
+            right: `${rightLogo.value}px`,
+            position: "absolute", // Ensures the top/right properties work
+          }}
+        />
+      ) : (
+        ""
+      )}
       {/* 3. APPLY BRAND TEXT COLOR */}
       <span
         className="image-text-brand"

@@ -25,6 +25,8 @@ const Option1Content = ({
   setBrandTop,
   siteTop,
   setSiteTop,
+  topLogo,
+  rightLogo,
   // 1. ADD THESE COLOR PROPS HERE
   brandTextColor,
   imageTextColor,
@@ -90,7 +92,20 @@ const Option1Content = ({
           {siteTime}
         </span>
       </div>
-      {logoCrop ? <img className="logo-crop" src={logoCrop} alt="Logo" /> : ""}
+      {logoCrop ? (
+        <img
+          className="logo-crop"
+          src={logoCrop}
+          alt="Logo"
+          style={{
+            top: `${topLogo.value}px`,
+            right: `${rightLogo.value}px`,
+            position: "absolute", // Ensures the top/right properties work
+          }}
+        />
+      ) : (
+        ""
+      )}
 
       {/* 3. APPLY BRAND TEXT COLOR HERE */}
       <span

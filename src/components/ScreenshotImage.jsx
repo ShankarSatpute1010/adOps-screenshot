@@ -430,6 +430,19 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
               options={selectOptionSiteText}
             />
           </div>
+          <div className="form-group" style={{ width: "110px" }}>
+            <input
+              type="text"
+              className="form-control"
+              value={siteTime}
+              id="formTime"
+              placeholder="Enter Time"
+              autoComplete="off"
+              onChange={(e) => {
+                setSiteTime(e.target.value);
+              }}
+            />
+          </div>
           <div
             style={{
               display: "flex",
@@ -603,9 +616,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
             {logoCrop ? (
               <div className="d-flex align-items-center">
                 <div className="ml-2 mb-4">
-                  <small className="d-block text-muted mb-1">
-                    Top
-                  </small>
+                  <small className="d-block text-muted mb-1">Top</small>
                   <Select
                     className="dropdown-size"
                     placeholder="Top"
@@ -619,9 +630,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
                 </div>
 
                 <div className="ml-2 mb-4">
-                  <small className="d-block text-muted mb-1">
-                    Right
-                  </small>
+                  <small className="d-block text-muted mb-1">Right</small>
                   <Select
                     className="dropdown-size"
                     placeholder="Right"
@@ -656,19 +665,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
               options={allBatteryOptions}
             />
           </div>
-          <div className="form-group" style={{ width: "110px" }}>
-            <input
-              type="text"
-              className="form-control"
-              value={siteTime}
-              id="formTime"
-              placeholder="Enter Time"
-              autoComplete="off"
-              onChange={(e) => {
-                setSiteTime(e.target.value);
-              }}
-            />
-          </div>
+
           <div className="form-group w-100">
             <Select
               className="dropdown-size w-100"

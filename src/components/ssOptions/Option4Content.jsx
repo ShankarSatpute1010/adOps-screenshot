@@ -27,6 +27,10 @@ const Option4Content = ({
   rightLogo,
   siteTop,
   setSiteTop,
+  allTopBatteryOptions,
+  setAllTopBatteryOptions,
+  allRightBatteryOptions,
+  setAllRightBatteryOptions,
   // 1. ADD COLOR PROPS HERE
   brandTextColor,
   imageTextColor,
@@ -42,6 +46,8 @@ const Option4Content = ({
       setTop(357);
       setBrandTop(337);
       setSiteTop(300);
+      setAllTopBatteryOptions(13);
+      setAllRightBatteryOptions(33)
     }
   }, [imageTopSize, selectSSOption]);
 
@@ -55,8 +61,8 @@ const Option4Content = ({
       <img
         style={{
           position: "absolute",
-          top: "13px",
-          right: "33px",
+          top: allTopBatteryOptions,
+          right: allRightBatteryOptions,
           width: "13px",
           mixBlendMode: "exclusion",
         }}

@@ -65,6 +65,16 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
   const [topSiteOption, setTopSiteOption] = useState({});
   const [siteTop, setSiteTop] = useState();
 
+  // Battery - Top value
+  const [topBattery, setTopBattery] = useState(null);
+  const [topBatteryOptions, setTopBatteryOptions] = useState({});
+  const [allTopBatteryOptions, setAllTopBatteryOptions] = useState();
+
+  // Battery - Right value
+  const [rightBattery, setRightBattery] = useState(null);
+  const [rightBatteryOptions, setRightBatteryOptions] = useState({});
+  const [allRightBatteryOptions, setAllRightBatteryOptions] = useState();
+
   // State for the currently selected values
 
   const initialTopLogo = 304;
@@ -139,6 +149,16 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
     setSiteTop(event.value);
   };
 
+  const handleTopBatteryOption = (event) => {
+    setTopBattery(event);
+    setAllTopBatteryOptions(event.value);
+  };
+
+  const handleRightBatteryOption = (event) => {
+    setRightBattery(event);
+    setAllRightBatteryOptions(event.value);
+  };
+
   const handleOnChangeBrandText = (event) => {
     setOptionBrandTextFont(event);
     setFontBrandText(event.value);
@@ -203,6 +223,34 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
     }
     setTopSiteOption(topSizeArr);
   }, [siteTop]);
+
+  useEffect(() => {
+    let values;
+    let topSizeArr = [];
+    for (
+      let index = allTopBatteryOptions - 10;
+      index < allTopBatteryOptions + 10;
+      index++
+    ) {
+      values = { value: index, label: index };
+      topSizeArr.push(values);
+    }
+    setTopBatteryOptions(topSizeArr);
+  }, [allTopBatteryOptions]);
+
+  useEffect(() => {
+    let values;
+    let topSizeArr = [];
+    for (
+      let index = allRightBatteryOptions - 10;
+      index < allRightBatteryOptions + 10;
+      index++
+    ) {
+      values = { value: index, label: index };
+      topSizeArr.push(values);
+    }
+    setRightBatteryOptions(topSizeArr);
+  }, [allRightBatteryOptions]);
 
   const handleImageTop = (e) => {
     setImageTop(e);
@@ -297,6 +345,10 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
       setSiteTop,
       topLogo,
       rightLogo,
+      allTopBatteryOptions,
+      setAllTopBatteryOptions,
+      allRightBatteryOptions,
+      setAllRightBatteryOptions,
       // Add the new color props here
       brandTextColor,
       imageTextColor,
@@ -657,12 +709,27 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
               options={imageTopOption}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group d-flex justify-content-between">
             <Select
+              className="w-100"
               placeholder="Battery Options"
               value={batteryOption}
               onChange={handleBatteryOption}
               options={allBatteryOptions}
+            />
+            <Select
+              className="dropdown-size ml-2"
+              placeholder="Top"
+              value={topBattery}
+              onChange={handleTopBatteryOption}
+              options={topBatteryOptions}
+            />
+            <Select
+              className="dropdown-size ml-2"
+              placeholder="Right"
+              value={rightBattery}
+              onChange={handleRightBatteryOption}
+              options={rightBatteryOptions}
             />
           </div>
 

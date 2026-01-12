@@ -28,6 +28,10 @@ const Option3Content = ({
   rightLogo,
   siteTop,
   setSiteTop,
+  allTopBatteryOptions,
+  setAllTopBatteryOptions,
+  allRightBatteryOptions,
+  setAllRightBatteryOptions,
 }) => {
   useEffect(() => {
     formattedDate = format(startDate, "HH:MM EEE, d MMM ");
@@ -39,6 +43,8 @@ const Option3Content = ({
       setTop(357);
       setBrandTop(337);
       setSiteTop(300);
+      setAllTopBatteryOptions(13);
+      setAllRightBatteryOptions(33)
     }
   }, [imageTopSize, selectSSOption]);
 
@@ -52,8 +58,8 @@ const Option3Content = ({
       <img
         style={{
           position: "absolute",
-          top: "13px",
-          right: "33px",
+          top: allTopBatteryOptions,
+          right: allRightBatteryOptions,
           width: "13px",
           mixBlendMode: "exclusion",
         }}

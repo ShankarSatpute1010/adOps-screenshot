@@ -96,14 +96,14 @@ const Option11Content = ({
             position: "relative",
             top: "-5px",
             fontSize: "18px",
-            color: "#bcbcbc",
+            color: siteTextColor
           }}
         >
           .
         </span>
         <span
           className="image-text-time leftSize"
-          style={{ fontSize: siteFontSize }}
+          style={{ fontSize: siteFontSize, color: siteTextColor }}
         >
           {siteTime}
         </span>

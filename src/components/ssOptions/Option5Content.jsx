@@ -47,7 +47,7 @@ const Option5Content = ({
       setBrandTop(337);
       setSiteTop(300);
       setAllTopBatteryOptions(11);
-      setAllRightBatteryOptions(40)
+      setAllRightBatteryOptions(40);
     }
   }, [imageTopSize, selectSSOption]);
 
@@ -86,14 +86,14 @@ const Option5Content = ({
             position: "relative",
             top: "-5px",
             fontSize: "18px",
-            color: "#bcbcbc",
+            color: siteTextColor,
           }}
         >
           .
         </span>
         <span
           className="image-text-time leftSize"
-          style={{ fontSize: siteFontSize }}
+          style={{ fontSize: siteFontSize, color: siteTextColor }}
         >
           {siteTime}
         </span>

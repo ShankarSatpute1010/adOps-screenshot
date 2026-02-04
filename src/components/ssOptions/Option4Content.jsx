@@ -52,10 +52,10 @@ const Option4Content = ({
   }, [imageTopSize, selectSSOption]);
 
   return (
-    <div className="option-three">
+    <div className="option-four">
       <img
         style={{ width: "100%" }}
-        src="https://demo.adgebra.in/custom/images/White_1.jpg"
+        src="https://demo.adgebra.in/custom/images/BlackSS_3.jpg"
         alt="Blank Screenshot"
       />
       <img

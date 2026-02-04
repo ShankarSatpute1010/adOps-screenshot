@@ -55,7 +55,7 @@ const Option2Content = ({
     <div className="option-two">
       <img
         style={{ width: "100%" }}
-        src="https://demo.adgebra.in/custom/images/IRCTC.jpg"
+        src="https://demo.adgebra.in/custom/images/webss_2.jpg"
         alt="Blank Screenshot"
       />
       <img

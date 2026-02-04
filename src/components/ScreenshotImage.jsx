@@ -187,7 +187,7 @@ export const ScreenshotImage = ({ croppedImageUrl }) => {
   useEffect(() => {
     let values;
     let topImageSizeArr = [];
-    for (let index = imageTopSize - 100; index < imageTopSize + 100; index++) {
+    for (let index = imageTopSize - 300; index < imageTopSize + 300; index++) {
       values = { value: index, label: index };
       topImageSizeArr.push(values);
     }
